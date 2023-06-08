@@ -1,0 +1,25 @@
+.spreadsheet {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .spreadsheet th,
+  .spreadsheet td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .spreadsheet th {
+    background-color: #144E87;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .spreadsheet tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .spreadsheet tbody tr:hover {
+    background-color: #ddd;
+  }
+  
