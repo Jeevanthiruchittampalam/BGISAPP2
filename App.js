@@ -3,14 +3,6 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import HomeStack from './app/routes/homeStack';
 
-// import Firebase from './firebase/firebase';
-
-// import firebaseConfig from './firebaseConfig';
-
-// if (firebase.apps.length === 0) {
-//   firebase.initializeApp(firebaseConfig);
-// }
-
 
 const App = () => {
   return <HomeStack />;
