@@ -1,24 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, ImageBackground } from 'react-native-web';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, ImageBackground, Picker } from 'react-native-web';
 import { firebase } from '../../config';
 import * as XLSX from 'xlsx';
 import * as DocumentPicker from 'expo-document-picker';
 
 const FileOut = () => {
+  const [selectedCollection, setSelectedCollection] = useState('items');
+
   const exportData = async () => {
     try {
       const db = firebase.firestore();
-      const querySnapshot = await db.collection('items').get();
-      const itemsData = querySnapshot.docs.map((doc) => doc.data());
-
+      const querySnapshot = await db.collection(selectedCollection).get();
+      const itemsData = querySnapshot.docs.map((doc) => {
+        const data = doc.data();
+        // Convert Firestore Timestamps to JavaScript Dates
+        if (data.dateEntered instanceof firebase.firestore.Timestamp) {
+          data.dateEntered = data.dateEntered.toDate();
+        }
+        return data;
+      });
+  
+      const worksheet = XLSX.utils.json_to_sheet(itemsData, {
+        dateNF: 'yyyy-mm-dd', // Specify the desired date format
+      });
       const workbook = XLSX.utils.book_new();
-      const worksheet = XLSX.utils.json_to_sheet(itemsData);
       XLSX.utils.book_append_sheet(workbook, worksheet, 'Items');
       const excelData = XLSX.write(workbook, { type: 'binary', bookType: 'xlsx' });
-
+  
       const fileName = 'items.xlsx';
       const data = new Blob([s2ab(excelData)], { type: 'application/octet-stream' });
-
+  
       if (navigator.msSaveBlob) {
         // For IE and Edge
         navigator.msSaveBlob(data, fileName);
@@ -33,6 +44,7 @@ const FileOut = () => {
       console.error('Error exporting data:', error);
     }
   };
+  
 
   const s2ab = (s) => {
     const buf = new ArrayBuffer(s.length);
@@ -43,11 +55,26 @@ const FileOut = () => {
 
   return (
     <ImageBackground source={require('../assets/test3.jpg')} style={styles.backgroundImage}>
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.exportButton} onPress={exportData}>
-        <Text style={styles.buttonText}>Export to Excel</Text>
-      </TouchableOpacity>
-    </View>
+      <View style={styles.container}>
+        <Picker
+          style={styles.picker}
+          selectedValue={selectedCollection}
+          onValueChange={(value) => setSelectedCollection(value)}
+        >
+          <Picker.Item label="Alberta Wish List" value="ABWS" />
+          <Picker.Item label="Alberta Critical Spares" value="ABSpares" />
+          <Picker.Item label="British Columbia Wish List" value="BCWS" />
+          <Picker.Item label="British Columbia Critical Spares" value="BCSpares" />
+          <Picker.Item label="California Wish List" value="CWS" />
+          <Picker.Item label="California Critical Spares" value="CSpares" />
+          <Picker.Item label="Quebec Wish List" value="QCWS" />
+          <Picker.Item label="Quebec Critical Spares" value="QCSpares" />
+        </Picker>
+
+        <TouchableOpacity style={styles.exportButton} onPress={exportData}>
+          <Text style={styles.buttonText}>Export to Excel</Text>
+        </TouchableOpacity>
+      </View>
     </ImageBackground>
   );
 };
@@ -57,6 +84,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+  },
+  picker: {
+    height: 40,
+    width: 300,
+    marginBottom: 20,
+    borderRadius: 5,
+    overflow: 'hidden',
+    backgroundColor: 'white',
   },
   exportButton: {
     backgroundColor: '#144E87',
@@ -69,10 +108,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontWeight: 'bold',
-  },
-  backgroundImage: {
-    flex: 1,
-    resizeMode: 'cover',
   },
 });
 

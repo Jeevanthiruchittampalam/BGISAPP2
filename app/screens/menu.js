@@ -3,18 +3,18 @@ import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from 'react
 
 const Menu = ({ navigation }) => {
   const pressAbout1Handler = () => {
-    navigation.navigate('About');
+    navigation.navigate('TP');
   };
 
   const pressEditHandler = () => {
     navigation.navigate('Edit');
   };
 
-  const pressRemoveHandler = () => {
-    navigation.navigate('Delete');
+  const pressBCHandler = () => {
+    navigation.navigate('BCMenu');
   };
 
-  const pressTestHandler = () => {
+  const pressCentralHandler = () => {
     navigation.navigate('SSF');
   };
 
@@ -35,20 +35,27 @@ const Menu = ({ navigation }) => {
         <Text style={styles.logo}>BGIS</Text>
 
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressEditHandler}>
-            <Text style={styles.buttonLabel}>Add</Text>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressBCHandler}>
+            <Text style={styles.buttonLabel}>BC</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressRemoveHandler}>
-            <Text style={styles.buttonLabel}>Remove</Text>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressCentralHandler}>
+            <Text style={styles.buttonLabel}>Central</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressTestHandler}>
-            <Text style={styles.buttonLabel}>Spreadsheet</Text>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressCentralHandler}>
+            <Text style={styles.buttonLabel}>AB</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressHistoryHandler}>
-            <Text style={styles.buttonLabel}>History</Text>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressCentralHandler}>
+            <Text style={styles.buttonLabel}>QC</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressAbout1Handler}>
-            <Text style={styles.buttonLabel}>About</Text>
+
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressEditHandler}>
+            <Text style={styles.buttonLabel}>Quick Add</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressHistoryHandler}>
+            <Text style={styles.buttonLabel}>Edit History</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressAbout1Handler}>
+            <Text style={styles.buttonLabel}>Image Descriptions</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressImportHandler}>
             <Text style={styles.buttonLabel}>Import</Text>

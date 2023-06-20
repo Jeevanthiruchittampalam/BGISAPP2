@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Keyboard, StyleSheet, ScrollView, ImageBackground } from 'react-native-web';
+import { View, Text, TextInput, TouchableOpacity, Keyboard, StyleSheet, ScrollView, ImageBackground, Picker } from 'react-native-web';
 import { firebase } from '../../config';
 
 const CoolPage = () => {
-  const itemsRef = firebase.firestore().collection('items');
   const [formData, setFormData] = useState({
     'CLLI Code': '',
     'Building Category': '',
@@ -16,27 +15,29 @@ const CoolPage = () => {
     'Part Description': '',
     'Part Location': '',
     'Last Cost': '',
-    'Quantity on Site': '',
+    'Quantity On Site': '',
     'Region': '',
     'Relationship to Parent Equipment/System': '',
     'Serial Number': '',
-    'Vendor': ''
+    'Vendor': '',
+    'dateReceived': 'Not Yet Recieved', // Add new field with default value "N" 
+    'collection': 'ABWS' // Default collection value
   });
 
-  // Add a new item
   const addItem = () => {
-    // Check if we have all required fields
     if (isFormValid()) {
-      // Get the current timestamp
       const timestamp = firebase.firestore.FieldValue.serverTimestamp();
       const data = {
         ...formData,
         dateEntered: timestamp
       };
+
+      const collection = formData.collection;
+      const itemsRef = firebase.firestore().collection(collection);
+
       itemsRef
         .add(data)
         .then(() => {
-          // Reset the form data
           setFormData({
             'CLLI Code': '',
             'Building Category': '',
@@ -53,37 +54,36 @@ const CoolPage = () => {
             'Region': '',
             'Relationship to Parent Equipment/System': '',
             'Serial Number': '',
-            'Vendor': ''
+            'Vendor': '',
+            'dateReceived': 'Not Yet Recieved', // Reset the field to default value "N"
+            'collection': collection // Preserve the selected collection
           });
-          // Dismiss the keyboard
           Keyboard.dismiss();
         })
         .catch((error) => {
-          // Show an alert in case of error
           alert(error);
         });
     }
   };
 
-  // Check if all required fields are filled
   const isFormValid = () => {
     const requiredFields = [
       'CLLI Code',
       'Building Category',
-            'Building Name' ,
-            'Building Type' ,
-            'Manufacturer' ,
-            'Model' ,
-            'Notes' ,
-            'Parent Equipment/System' ,
-            'Part Description' ,
-            'Part Location' ,
-            'Last Cost' ,
-            'Quantity On Site' ,
-            'Region' ,
-            'Relationship to Parent Equipment/System' ,
-            'Serial Number' ,
-            'Vendor' 
+      'Building Name',
+      'Building Type',
+      'Manufacturer',
+      'Model',
+      'Notes',
+      'Parent Equipment/System',
+      'Part Description',
+      'Part Location',
+      'Last Cost',
+      'Quantity On Site',
+      'Region',
+      'Relationship to Parent Equipment/System',
+      'Serial Number',
+      'Vendor'
     ];
 
     for (const field of requiredFields) {
@@ -95,6 +95,33 @@ const CoolPage = () => {
     return true;
   };
 
+  const handleCollectionChange = (value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      collection: value,
+    }));
+    setFormData((prevData) => ({
+      ...prevData,
+      'CLLI Code': '',
+      'Building Category': '',
+      'Building Name': '',
+      'Building Type': '',
+      'Manufacturer': '',
+      'Model': '',
+      'Notes': '',
+      'Parent Equipment/System': '',
+      'Part Description': '',
+      'Part Location': '',
+      'Last Cost': '',
+      'Quantity On Site': '',
+      'Region': '',
+      'Relationship to Parent Equipment/System': '',
+      'Serial Number': '',
+      'Vendor': '',
+      'dateReceived': 'Not Yet Recieved', // Reset the field to default value "N"
+    }));
+  };
+
   const handleInputChange = (field, value) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -102,10 +129,25 @@ const CoolPage = () => {
     }));
   };
 
+
   return (
     <ImageBackground source={require('../assets/test3.jpg')} style={styles.backgroundImage}>
     <ScrollView style={styles.container}>
       <View style={styles.formContainer}>
+      <Picker
+            style={styles.input}
+            selectedValue={formData.collection}
+            onValueChange={(value) => handleCollectionChange(value)}
+          >
+            <Picker.Item label="Alberta Wish List" value="ABWS" />
+            <Picker.Item label="Alberta Critical Spares" value="ABSpares" />
+            <Picker.Item label="British Columbia Wish List" value="BCWS" />
+            <Picker.Item label="British Columbia Critical Spares" value="BCSpares" />
+            <Picker.Item label="California Wish List" value="CWS" />
+            <Picker.Item label="California Critical Spares" value="CSpares" />
+            <Picker.Item label="Quebec Wish List" value="QCWS" />
+            <Picker.Item label="Quebec Critical Spares" value="QCSpares" />
+          </Picker>
         <TextInput
           style={styles.input}
           placeholder="CLLI Code"
@@ -250,6 +292,19 @@ const CoolPage = () => {
           underlineColor="transparent"
           autoCapitalize="none"
         />
+
+        <TextInput
+            style={styles.input}
+            placeholder="Date Received"
+            placeholderTextColor="#aaaaaa"
+            onChangeText={(value) => handleInputChange('dateReceived', value)}
+            value={formData['dateReceived']}
+            underlineColor="transparent"
+            autoCapitalize="none"
+        />
+
+         
+        
         <TouchableOpacity style={styles.button} onPress={addItem}>
           <Text style={styles.buttonText}>Add</Text>
         </TouchableOpacity>

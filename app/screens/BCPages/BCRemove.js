@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native-web';
-import { firebase } from '../../config';
+import { firebase } from '../../../config';
 
 const DeletePage = () => {
-  const itemsRef = firebase.firestore().collection('items');
+  const itemsRef = firebase.firestore().collection('BCSpares');
   const [items, setItems] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
 

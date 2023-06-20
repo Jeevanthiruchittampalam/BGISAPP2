@@ -7,7 +7,7 @@ const WelcomeScreen = ({ navigation }) => {
   };
 
   const pressRegisterHandler = () => {
-    navigation.navigate('About');
+    navigation.navigate('BCMenu');
   };
 
   return (

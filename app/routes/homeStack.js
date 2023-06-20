@@ -5,12 +5,26 @@ import About from '../screens/about'
 import Login from '../screens/login'
 import ViewScreen from '../screens/view'
 import Menu from '../screens/menu'
-import Edit from '../screens/edit'
+import Edit from '../screens/quickAdd'
 import Delete from '../screens/delete'
 import FileIn from '../screens/fileIn'
 import FileOut from '../screens/fileOut'
 import History from '../screens/history'
 import SSF from '../screens/spreadsheet'
+
+//BC Imports
+import BCMenu from '../screens/BCPages/BCMenu'
+import BCSpares from '../screens/BCPages/BCCSparesSS'
+import BCWS from '../screens/BCPages/BCWS'
+import BCRemove from '../screens/BCPages/BCRemove'
+import BCDates from '../screens/BCPages/BCDates'
+//
+
+//BC Central
+import CMenu from '../screens/CMenu'
+import CSpares from '../screens/CCSparesSS'
+import CWS from '../screens/about'
+//
 
 
 const screens = {
@@ -110,6 +124,100 @@ const screens = {
   },
   SSF: {
     screen: SSF,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+ 
+
+  //------BC
+  BCMenu: {
+    screen: BCMenu,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  BCSpares: {
+    screen: BCSpares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  BCWS: {
+    screen: BCWS,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  BCRemove: {
+    screen: BCRemove,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  BCDates: {
+    screen: BCDates,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+  //--------
+  //------Central
+  CMenu: {
+    screen: CMenu,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  CSpares: {
+    screen: CSpares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  CWS: {
+    screen:CWS,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',
