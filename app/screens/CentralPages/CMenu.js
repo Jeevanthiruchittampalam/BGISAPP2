@@ -3,29 +3,27 @@ import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from 'react
 
 const Menu = ({ navigation }) => {
   const pressPage1Handler = () => {
-    navigation.navigate('BCSpares', { page: 1 });
+    navigation.navigate('CSpares', { page: 1 });
   };
 
   const pressPage2Handler = () => {
-    navigation.navigate('BCWS', { page: 2 });
+    navigation.navigate('CWS', { page: 2 });
   };
 
   const pressPage3Handler = () => {
-    navigation.navigate('About', { page: 3 });
+    navigation.navigate('CDates', { page: 3 });
   };
 
   const pressPage4Handler = () => {
-    navigation.navigate('About', { page: 4 });
+    navigation.navigate('CRemove', { page: 4 });
   };
 
-  const pressPage5Handler = () => {
-    navigation.navigate('About', { page: 5 });
-  };
+
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('../assets/door.jpg')} style={styles.backgroundImage}>
-        <Text style={styles.logo}>British Columbia</Text>
+      <ImageBackground source={require('../../assets/door.jpg')} style={styles.backgroundImage}>
+        <Text style={styles.logo}>Central</Text>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage1Handler}>
@@ -37,11 +35,8 @@ const Menu = ({ navigation }) => {
           <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage3Handler}>
             <Text style={styles.buttonLabel}>Date Manager</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage4Handler}>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressPage4Handler}>
             <Text style={styles.buttonLabel}>Remove</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage5Handler}>
-            <Text style={styles.buttonLabel}>Page 5</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>

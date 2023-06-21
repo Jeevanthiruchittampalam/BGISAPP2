@@ -8,7 +8,7 @@ const BCSparesPage = () => {
   useEffect(() => {
     const fetchSpares = async () => {
       try {
-        const collection = 'BCSpares';
+        const collection = 'CSpares';
         const querySnapshot = await firebase.firestore().collection(collection).get();
 
         const sparesData = querySnapshot.docs.map((doc) => ({

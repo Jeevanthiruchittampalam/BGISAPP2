@@ -15,7 +15,7 @@ const Menu = ({ navigation }) => {
   };
 
   const pressCentralHandler = () => {
-    navigation.navigate('SSF');
+    navigation.navigate('CMenu');
   };
 
   const pressImportHandler = () => {

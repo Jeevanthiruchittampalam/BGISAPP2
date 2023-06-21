@@ -18,9 +18,7 @@ const Menu = ({ navigation }) => {
     navigation.navigate('BCRemove', { page: 4 });
   };
 
-  const pressPage5Handler = () => {
-    navigation.navigate('About', { page: 5 });
-  };
+
 
   return (
     <View style={styles.container}>
@@ -39,9 +37,6 @@ const Menu = ({ navigation }) => {
           </TouchableOpacity>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressPage4Handler}>
             <Text style={styles.buttonLabel}>Remove</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage5Handler}>
-            <Text style={styles.buttonLabel}>About</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>

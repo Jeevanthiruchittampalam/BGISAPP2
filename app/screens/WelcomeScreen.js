@@ -7,8 +7,10 @@ const WelcomeScreen = ({ navigation }) => {
   };
 
   const pressRegisterHandler = () => {
-    navigation.navigate('BCMenu');
+    navigation.navigate('Menu');
   };
+
+
 
   return (
     <ImageBackground source={require('../assets/test.jpg')} style={styles.backgroundImage}>
@@ -20,7 +22,9 @@ const WelcomeScreen = ({ navigation }) => {
         <TouchableOpacity style={[styles.loginButton, { backgroundColor: '#144E87' }]} onPress={pressLoginHandler}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.registerButton, { backgroundColor: '#71d9e2' }]} onPress={pressRegisterHandler}>
+        <TouchableOpacity style={[styles.registerButton, { backgroundColor: '#71d9e2' }]} onPress={
+          pressRegisterHandler
+        }>
           <Text style={styles.buttonText}> About </Text>
         </TouchableOpacity>
       </View>

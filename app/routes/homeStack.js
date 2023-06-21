@@ -20,10 +20,13 @@ import BCRemove from '../screens/BCPages/BCRemove'
 import BCDates from '../screens/BCPages/BCDates'
 //
 
-//BC Central
-import CMenu from '../screens/CMenu'
-import CSpares from '../screens/CCSparesSS'
-import CWS from '../screens/about'
+// Central Imports
+import CMenu from '../screens/CentralPages/CMenu'
+import CSpares from '../screens/CentralPages/CCSparesSS'
+import CWS from '../screens/CentralPages/CWS'
+import CRemove from '../screens/CentralPages/CRemove'
+import CDates from '../screens/CentralPages/CDates'
+//
 //
 
 
@@ -227,6 +230,30 @@ const screens = {
     }),
     
   },
+  CRemove: {
+    screen: CRemove,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  CDates: {
+    screen: CDates,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+  //--------
 };
 
 

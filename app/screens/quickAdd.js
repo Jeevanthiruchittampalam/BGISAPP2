@@ -20,16 +20,17 @@ const CoolPage = () => {
     'Relationship to Parent Equipment/System': '',
     'Serial Number': '',
     'Vendor': '',
+    'Date Entered': '',
     'dateReceived': 'Not Yet Recieved', // Add new field with default value "N" 
     'collection': 'ABWS' // Default collection value
   });
 
   const addItem = () => {
     if (isFormValid()) {
-      const timestamp = firebase.firestore.FieldValue.serverTimestamp();
+ 
       const data = {
         ...formData,
-        dateEntered: timestamp
+       
       };
 
       const collection = formData.collection;
@@ -55,6 +56,7 @@ const CoolPage = () => {
             'Relationship to Parent Equipment/System': '',
             'Serial Number': '',
             'Vendor': '',
+            'Date Entered': '',
             'dateReceived': 'Not Yet Recieved', // Reset the field to default value "N"
             'collection': collection // Preserve the selected collection
           });
@@ -83,6 +85,7 @@ const CoolPage = () => {
       'Region',
       'Relationship to Parent Equipment/System',
       'Serial Number',
+      'Date Entered',
       'Vendor'
     ];
 
@@ -118,6 +121,7 @@ const CoolPage = () => {
       'Relationship to Parent Equipment/System': '',
       'Serial Number': '',
       'Vendor': '',
+      'Date Entered': '',
       'dateReceived': 'Not Yet Recieved', // Reset the field to default value "N"
     }));
   };
@@ -289,6 +293,15 @@ const CoolPage = () => {
           placeholderTextColor="#aaaaaa"
           onChangeText={(value) => handleInputChange('Vendor', value)}
           value={formData['Vendor']}
+          underlineColor="transparent"
+          autoCapitalize="none"
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="MM-DD-YYYY"
+          placeholderTextColor="#aaaaaa"
+          onChangeText={(value) => handleInputChange('Date Entered', value)}
+          value={formData['Date Entered']}
           underlineColor="transparent"
           autoCapitalize="none"
         />
