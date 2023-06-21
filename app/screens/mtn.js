@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, StyleSheet, Button, ScrollView } from 'react-native';
-import { firebase } from '../../../config';
+import { firebase } from '../../config';
 
-const BCSparesPage = () => {
+const QCSparesPage = () => {
   const [spares, setSpares] = useState([]);
 
   useEffect(() => {
     const fetchSpares = async () => {
       try {
-        const collection = 'BCSpares';
+        const collection = 'QCSpares';
         const querySnapshot = await firebase.firestore().collection(collection).get();
 
         const sparesData = querySnapshot.docs.map((doc) => ({
@@ -18,7 +18,7 @@ const BCSparesPage = () => {
 
         setSpares(sparesData);
       } catch (error) {
-        console.error('Error fetching BCSpares:', error);
+        console.error('Error fetching QCSpares:', error);
       }
     };
 
@@ -35,7 +35,7 @@ const BCSparesPage = () => {
 
   const saveField = async (id, field, value) => {
     try {
-      const collection = 'BCSpares';
+      const collection = 'QCSpares';
 
       // Update the field value in the collection
       await firebase.firestore().collection(collection).doc(id).update({
@@ -63,10 +63,10 @@ const BCSparesPage = () => {
           <Text style={[styles.headerText, styles.column]}>Manufacturer</Text>
           <Text style={[styles.headerText, styles.column]}>Model</Text>
           <Text style={[styles.headerText, styles.column]}>Parent Equipment/ System</Text>
-          <Text style={[styles.headerText, styles.column]}>Date Entered</Text>
-          <Text style={[styles.headerText, styles.column]}>Date Received</Text>
-          <Text style={[styles.headerText, styles.column]}>Required By</Text>
-          <Text style={[styles.headerText, styles.column]}>Estimated Arrival Interval</Text>
+          <Text style={[styles.headerText, styles.column]}>Notes</Text>
+          <Text style={[styles.headerText, styles.column]}>Building Name</Text>
+          <Text style={[styles.headerText, styles.column]}>Last Maintenance</Text>
+          <Text style={[styles.headerText, styles.column]}>Upcoming Maintenance Date</Text>
           <Text style={[styles.headerText, styles.column]}>Status</Text>
         </View>
         {spares.map((spare) => (
@@ -77,36 +77,30 @@ const BCSparesPage = () => {
             <Text style={[styles.itemText, styles.column]}>
               {spare['Parent Equipment/System']}
             </Text>
-            <Text style={[styles.itemText, styles.column]}>{spare['Date Entered']}</Text>
+            <Text style={[styles.itemText, styles.column]}>{spare['Notes']}</Text>
+            <Text style={[styles.itemText, styles.column]}>{spare['Building Name']}</Text>
             <TextInput
               style={[styles.input, styles.column]}
-              value={spare.dateReceived}
-              onChangeText={(value) => handleChange(spare.id, 'dateReceived', value)}
+              value={spare['Last Maintenance']}
+              onChangeText={(value) => handleChange(spare.id, 'Last Maintenance', value)}
             />
             <TextInput
               style={[styles.input, styles.column]}
-              value={spare.requiredBy}
-              onChangeText={(value) => handleChange(spare.id, 'requiredBy', value)}
+              value={spare['Upcoming Maintenance Date']}
+              onChangeText={(value) => handleChange(spare.id, 'Upcoming Maintenance Date', value)}
             />
             <TextInput
               style={[styles.input, styles.column]}
-              value={spare.estimatedArrivalInterval}
-              onChangeText={(value) =>
-                handleChange(spare.id, 'estimatedArrivalInterval', value)
-              }
-            />
-            <TextInput
-              style={[styles.input, styles.column]}
-              value={spare['Delivery Status']}
-              onChangeText={(value) => handleChange(spare.id, 'Delivery Status', value)}
+              value={spare['Maintenance Status']}
+              onChangeText={(value) => handleChange(spare.id, 'Maintenance Status', value)}
             />
             <Button
               title="Save"
               onPress={() => {
-                saveField(spare.id, 'dateReceived', spare.dateReceived);
-                saveField(spare.id, 'requiredBy', spare.requiredBy);
-                saveField(spare.id, 'estimatedArrivalInterval', spare.estimatedArrivalInterval);
-                saveField(spare.id, 'Delivery Status', spare['Delivery Status']);
+                saveField(spare.id, 'Last Maintenance', spare['Last Mantenance']);
+                saveField(spare.id, 'Upcoming Maintenance Date', spare['Upcoming Maintenance Date']);
+                
+                saveField(spare.id, 'Maintenance Status', spare['Maintenance Status']);
               }}
             />
           </View>
@@ -160,4 +154,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BCSparesPage;
+export default QCSparesPage;

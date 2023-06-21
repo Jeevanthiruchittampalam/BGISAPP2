@@ -15,7 +15,7 @@ const Menu = ({ navigation }) => {
   };
 
   const pressPage4Handler = () => {
-    navigation.navigate('BCRemove', { page: 4 });
+    navigation.navigate('ImageU', { page: 4 });
   };
 
 
