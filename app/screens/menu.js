@@ -3,7 +3,7 @@ import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from 'react
 
 const Menu = ({ navigation }) => {
   const pressAbout1Handler = () => {
-    navigation.navigate('About');
+    navigation.navigate('ImageU');
   };
 
   const pressEditHandler = () => {

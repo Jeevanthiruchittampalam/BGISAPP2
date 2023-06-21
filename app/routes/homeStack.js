@@ -11,6 +11,7 @@ import FileIn from '../screens/fileIn'
 import FileOut from '../screens/fileOut'
 import History from '../screens/history'
 import SSF from '../screens/spreadsheet'
+import ImageU from '../screens/Imageuploader'
 
 //BC Imports
 import BCMenu from '../screens/BCPages/BCMenu'
@@ -142,6 +143,17 @@ const screens = {
   },
   SSF: {
     screen: SSF,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  ImageU: {
+    screen: ImageU,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',
