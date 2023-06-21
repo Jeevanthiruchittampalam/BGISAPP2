@@ -28,6 +28,21 @@ import CRemove from '../screens/CentralPages/CRemove'
 import CDates from '../screens/CentralPages/CDates'
 //
 //
+// Quebec Imports
+import QMenu from '../screens/QCPages/QMenu'
+import QSpares from '../screens/QCPages/QCSparesSS'
+import QWS from '../screens/QCPages/QWS'
+import QRemove from '../screens/QCPages/QRemove'
+import QDates from '../screens/QCPages/QDates'
+//
+
+// Alberta Imports
+import ABMenu from '../screens/ABPages/ABMenu'
+import ABSpares from '../screens/ABPages/ABCSparesSS'
+import ABWS from '../screens/ABPages/ABWS'
+import ABRemove from '../screens/ABPages/ABRemove'
+import ABDates from '../screens/ABPages/ABDates'
+//
 
 
 const screens = {
@@ -243,6 +258,122 @@ const screens = {
   },
   CDates: {
     screen: CDates,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+  //--------
+  //------Alberta
+  ABMenu: {
+    screen: ABMenu,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  ABSpares: {
+    screen: ABSpares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  ABWS: {
+    screen:ABWS,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  ABRemove: {
+    screen: ABRemove,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  ABDates: {
+    screen: ABDates,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+  //--------
+  //------Quebec
+  QMenu: {
+    screen: QMenu,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  QSpares: {
+    screen: QSpares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  QWS: {
+    screen:QWS,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  QRemove: {
+    screen: QRemove,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  QDates: {
+    screen: QDates,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',

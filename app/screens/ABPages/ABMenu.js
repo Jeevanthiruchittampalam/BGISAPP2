@@ -23,7 +23,7 @@ const Menu = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../../assets/door.jpg')} style={styles.backgroundImage}>
-        <Text style={styles.logo}>British Columbia</Text>
+        <Text style={styles.logo}>Alberta</Text>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage1Handler}>
