@@ -20,13 +20,14 @@ const About = () => {
               <Text style={styles.bulletPoint}>Intuitive and Visually Appealing: Complete</Text>
               <Text style={styles.bulletPoint}>User Login: Functional, Need to Import Users</Text>
               <Text style={styles.bulletPoint}>Database Storage of Data: Complete</Text>
-              <Text style={styles.bulletPoint}>Editable Data: Somewhat Complete</Text>
+              <Text style={styles.bulletPoint}>Editable Data: Complete</Text>
               <Text style={styles.bulletPoint}>History of Edits: Partially Complete</Text>
               <Text style={styles.bulletPoint}>Notifications of shortages: Incomplete</Text>
-              <Text style={styles.bulletPoint}>Information Sorting: Incomplete</Text>
+              <Text style={styles.bulletPoint}>Information Sorting: Complete</Text>
               <Text style={styles.bulletPoint}>Refreshable: Complete</Text>
+              <Text style={styles.bulletPoint}>Maintenance Schedule, Leave Time/Criticality (Need Data), orderedvsrevieced, images: Incomplete</Text>
               <Text style={styles.bulletPoint}>Bonuses: Web scraping, auto procurement: Incomplete</Text>
-              <Text style={styles.bulletPoint}>Version: 2.6</Text>
+              <Text style={styles.bulletPoint}>Version: 2.8</Text>
             </View>
           </ScrollView>
         </View>

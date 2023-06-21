@@ -3,7 +3,7 @@ import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from 'react
 
 const Menu = ({ navigation }) => {
   const pressAbout1Handler = () => {
-    navigation.navigate('TP');
+    navigation.navigate('About');
   };
 
   const pressEditHandler = () => {
@@ -16,6 +16,13 @@ const Menu = ({ navigation }) => {
 
   const pressCentralHandler = () => {
     navigation.navigate('CMenu');
+  };
+  const pressABHandler = () => {
+    navigation.navigate('ABMenu');
+  };
+
+  const pressQCHandler = () => {
+    navigation.navigate('QMenu');
   };
 
   const pressImportHandler = () => {
@@ -41,10 +48,10 @@ const Menu = ({ navigation }) => {
           <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressCentralHandler}>
             <Text style={styles.buttonLabel}>Central</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressCentralHandler}>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressABHandler}>
             <Text style={styles.buttonLabel}>AB</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressCentralHandler}>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressQCHandler}>
             <Text style={styles.buttonLabel}>QC</Text>
           </TouchableOpacity>
 
