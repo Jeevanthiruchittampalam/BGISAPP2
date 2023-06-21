@@ -22,7 +22,7 @@ const Menu = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('../../assets/door.jpg')} style={styles.backgroundImage}>
+      <ImageBackground source={require('../../assets/test5.jpg')} style={styles.backgroundImage}>
         <Text style={styles.logo}>British Columbia</Text>
 
         <View style={styles.buttonContainer}>
@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     color: '#144E87',
     marginBottom: 10,
     marginTop: 10,
+    
   },
   buttonContainer: {
     alignItems: 'center',

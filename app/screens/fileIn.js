@@ -8,44 +8,61 @@ const FileIn = () => {
   const [fileName, setFileName] = useState('');
   const [selectedCollection, setSelectedCollection] = useState('items');
 
-  const importData = async () => {
-    try {
-      const file = await DocumentPicker.getDocumentAsync({ type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-      if (file.type === 'success') {
-        const { uri } = file;
-        const response = await fetch(uri);
-        const blob = await response.blob();
+const importData = async () => {
+  try {
+    const file = await DocumentPicker.getDocumentAsync({ type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    if (file.type === 'success') {
+      const { uri } = file;
+      const response = await fetch(uri);
+      const blob = await response.blob();
 
-        const reader = new FileReader();
-        reader.onload = async () => {
-          const data = new Uint8Array(reader.result);
-          const workbook = XLSX.read(data, { type: 'array' });
-          const sheetName = workbook.SheetNames[0];
-          const worksheet = workbook.Sheets[sheetName];
-          const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+      const reader = new FileReader();
+      reader.onload = async () => {
+        const data = new Uint8Array(reader.result);
+        const workbook = XLSX.read(data, { type: 'array' });
+        const sheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[sheetName];
+        const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
-          const headers = jsonData[0];
-          const itemsData = jsonData.slice(1).map((row) => {
-            const item = {};
-            headers.forEach((header, index) => {
-              item[header] = row[index] || '';
-            });
-            return item;
-          });
+        const headers = jsonData[0];
+        // ...
+const itemsData = jsonData.slice(1).map((row) => {
+  const item = {};
+  headers.forEach((header, index) => {
+    const value = row[index] || '';
 
-          const db = firebase.firestore();
-          const collectionRef = db.collection(selectedCollection); // Use selectedCollection
-          await Promise.all(itemsData.map((item) => collectionRef.add(item)));
-
-          setFileName(file.name);
-        };
-
-        reader.readAsArrayBuffer(blob);
+    // Check if the header is "Date Entered"
+    if (header === 'Date Entered') {
+      // Convert Excel date value to desired format if it exists
+      if (typeof value === 'number' && !isNaN(value)) {
+        const dateValue = new Date(Math.round((value - 25569) * 86400 * 1000));
+        const formattedDate = dateValue.toISOString().split('T')[0];
+        item[header] = formattedDate;
+      } else {
+        item[header] = ''; // Set a default value if "Date Entered" is empty or invalid
       }
-    } catch (error) {
-      console.error('Error importing data:', error);
+    } else {
+      item[header] = value;
     }
-  };
+  });
+  return item;
+});
+// ...
+
+
+        const db = firebase.firestore();
+        const collectionRef = db.collection(selectedCollection); // Use selectedCollection
+        await Promise.all(itemsData.map((item) => collectionRef.add(item)));
+
+        setFileName(file.name);
+      };
+
+      reader.readAsArrayBuffer(blob);
+    }
+  } catch (error) {
+    console.error('Error importing data:', error);
+  }
+};
 
   return (
     <ImageBackground source={require('../assets/test3.jpg')} style={styles.backgroundImage}>

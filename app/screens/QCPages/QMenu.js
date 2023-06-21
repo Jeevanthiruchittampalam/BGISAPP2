@@ -22,7 +22,7 @@ const Menu = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('../../assets/door.jpg')} style={styles.backgroundImage}>
+      <ImageBackground source={require('../../assets/test4.jpg')} style={styles.backgroundImage}>
         <Text style={styles.logo}>Quebec</Text>
 
         <View style={styles.buttonContainer}>

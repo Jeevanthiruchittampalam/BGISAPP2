@@ -25,9 +25,10 @@ const About = () => {
               <Text style={styles.bulletPoint}>Notifications of shortages: Incomplete</Text>
               <Text style={styles.bulletPoint}>Information Sorting: Complete</Text>
               <Text style={styles.bulletPoint}>Refreshable: Complete</Text>
-              <Text style={styles.bulletPoint}>Maintenance Schedule, Leave Time/Criticality (Need Data), orderedvsrevieced, images: Incomplete</Text>
+              <Text style={styles.bulletPoint}>Leave Time, Criticality, Ordered vs Recieved, Images: Complete</Text>
+              <Text style={styles.bulletPoint}>Maintenance Schedule: Incomplete</Text>
               <Text style={styles.bulletPoint}>Bonuses: Web scraping, auto procurement: Incomplete</Text>
-              <Text style={styles.bulletPoint}>Version: 2.8</Text>
+              <Text style={styles.bulletPoint}>Version: 2.9</Text>
             </View>
           </ScrollView>
         </View>
