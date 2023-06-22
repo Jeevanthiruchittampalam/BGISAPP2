@@ -70,7 +70,13 @@ const QCSparesPage = () => {
           <Text style={[styles.headerText, styles.column]}>Status</Text>
         </View>
         {spares.map((spare) => (
-          <View key={spare.id} style={styles.item}>
+          <View
+            key={spare.id}
+            style={[
+              styles.item,
+              spare['Maintenance Status'].toLowerCase() === 'urgent' && { backgroundColor: 'red' },
+            ]}
+          >
             <Text style={[styles.itemText, styles.column]}>{spare['Part Description']}</Text>
             <Text style={[styles.itemText, styles.column]}>{spare['Manufacturer']}</Text>
             <Text style={[styles.itemText, styles.column]}>{spare['Model']}</Text>
