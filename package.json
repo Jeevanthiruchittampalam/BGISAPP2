@@ -5,6 +5,7 @@
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
+    "build": "build",
     "web": "expo start --web"
   },
   "dependencies": {
@@ -54,7 +55,8 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "react-scripts": "^5.0.1"
   },
   "private": true,
   "resolutions": {

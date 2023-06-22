@@ -1,2 +1,1 @@
--Explore solutions to edit history issues
--Publish app
+START HOSTING
