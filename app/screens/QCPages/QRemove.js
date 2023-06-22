@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-nati
 import { firebase } from '../../../config';
 
 const DeletePage = () => {
-  const itemsRef = firebase.firestore().collection('QSpares');
+  const itemsRef = firebase.firestore().collection('QCSpares');
   const [items, setItems] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
 

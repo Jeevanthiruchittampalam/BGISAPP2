@@ -67,7 +67,7 @@ const ABMaintenancePage = () => {
           <Text style={[styles.headerText, styles.column]}>Building Name</Text>
           <Text style={[styles.headerText, styles.column]}>Last Maintenance</Text>
           <Text style={[styles.headerText, styles.column]}>Upcoming Maintenance Date</Text>
-          <Text style={[styles.headerText, styles.column]}>Status</Text>
+          <Text style={[styles.headerText, styles.column]}>Status (Type Urgent for Red)</Text>
         </View>
         {spares.map((spare) => {
           const isUrgent = spare['Maintenance Status'] && spare['Maintenance Status'].toLowerCase() === 'urgent';

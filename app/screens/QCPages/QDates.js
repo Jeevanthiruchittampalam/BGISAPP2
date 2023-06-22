@@ -8,7 +8,7 @@ const BCSparesPage = () => {
   useEffect(() => {
     const fetchSpares = async () => {
       try {
-        const collection = 'QSpares';
+        const collection = 'QCSpares';
         const querySnapshot = await firebase.firestore().collection(collection).get();
 
         const sparesData = querySnapshot.docs.map((doc) => ({
@@ -35,7 +35,7 @@ const BCSparesPage = () => {
 
   const saveDateReceived = async (id, value) => {
     try {
-      const collection = 'QSpares';
+      const collection = 'QCSpares';
 
       // Update the dateReceived value in the collection
       await firebase.firestore().collection(collection).doc(id).update({

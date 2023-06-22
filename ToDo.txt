@@ -1,4 +1,2 @@
--Finish Moving BCDates into all areas 
--Import all information 
--Finish Edit History? Might not be possible
+-Explore solutions to edit history issues
 -Publish app

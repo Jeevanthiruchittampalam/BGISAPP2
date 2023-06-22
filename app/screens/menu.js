@@ -62,7 +62,7 @@ const Menu = ({ navigation }) => {
             <Text style={styles.buttonLabel}>Edit History</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressAbout1Handler}>
-            <Text style={styles.buttonLabel}>Image Descriptions</Text>
+            <Text style={styles.buttonLabel}>Tool/Part Descriptions</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressImportHandler}>
             <Text style={styles.buttonLabel}>Import</Text>

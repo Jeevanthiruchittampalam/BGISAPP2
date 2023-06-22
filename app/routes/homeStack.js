@@ -11,7 +11,7 @@ import FileIn from '../screens/fileIn'
 import FileOut from '../screens/fileOut'
 import History from '../screens/history'
 import SSF from '../screens/spreadsheet'
-import ImageU from '../screens/cleartime'
+import ImageU from '../screens/Imageuploader'
 
 //BC Imports
 import BCMenu from '../screens/BCPages/BCMenu'
