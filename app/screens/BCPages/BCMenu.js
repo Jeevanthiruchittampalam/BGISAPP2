@@ -18,7 +18,7 @@ const Menu = ({ navigation }) => {
     navigation.navigate('BCRemove', { page: 4 });
   };
   const pressPage5Handler = () => {
-    navigation.navigate('ImageU', { page: 5 });
+    navigation.navigate('BCMaintenance', { page: 5 });
   };
 
 

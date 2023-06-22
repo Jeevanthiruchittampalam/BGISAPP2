@@ -11,7 +11,7 @@ import FileIn from '../screens/fileIn'
 import FileOut from '../screens/fileOut'
 import History from '../screens/history'
 import SSF from '../screens/spreadsheet'
-import ImageU from '../screens/etete'
+import ImageU from '../screens/Imageuploader'
 
 //BC Imports
 import BCMenu from '../screens/BCPages/BCMenu'
@@ -19,6 +19,7 @@ import BCSpares from '../screens/BCPages/BCCSparesSS'
 import BCWS from '../screens/BCPages/BCWS'
 import BCRemove from '../screens/BCPages/BCRemove'
 import BCDates from '../screens/BCPages/BCDates'
+import BCMaintenance from '../screens/BCPages/BCMaintenance'
 //
 
 // Central Imports
@@ -27,6 +28,7 @@ import CSpares from '../screens/CentralPages/CCSparesSS'
 import CWS from '../screens/CentralPages/CWS'
 import CRemove from '../screens/CentralPages/CRemove'
 import CDates from '../screens/CentralPages/CDates'
+import CMaintenance from '../screens/CentralPages/CMaintenance'
 //
 //
 // Quebec Imports
@@ -35,6 +37,7 @@ import QSpares from '../screens/QCPages/QCSparesSS'
 import QWS from '../screens/QCPages/QWS'
 import QRemove from '../screens/QCPages/QRemove'
 import QDates from '../screens/QCPages/QDates'
+import QMaintenance from '../screens/QCPages/QMaintenance'
 //
 
 // Alberta Imports
@@ -43,6 +46,7 @@ import ABSpares from '../screens/ABPages/ABCSparesSS'
 import ABWS from '../screens/ABPages/ABWS'
 import ABRemove from '../screens/ABPages/ABRemove'
 import ABDates from '../screens/ABPages/ABDates'
+import ABMaintenance from '../screens/ABPages/ABMaintenance'
 //
 
 
@@ -221,6 +225,17 @@ const screens = {
     }),
     
   },
+  BCMaintenance: {
+    screen: BCMaintenance,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
 
   //--------
   //------Central
@@ -270,6 +285,17 @@ const screens = {
   },
   CDates: {
     screen: CDates,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  CMaintenance: {
+    screen: CMaintenance,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',
@@ -337,6 +363,18 @@ const screens = {
     }),
     
   },
+  ABMaintenance: {
+    screen: ABMaintenance,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  
 
   //--------
   //------Quebec
@@ -386,6 +424,17 @@ const screens = {
   },
   QDates: {
     screen: QDates,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  QMaintenance: {
+    screen: QMaintenance,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',

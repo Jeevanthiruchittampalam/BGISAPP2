@@ -17,7 +17,9 @@ const Menu = ({ navigation }) => {
   const pressPage4Handler = () => {
     navigation.navigate('QRemove', { page: 4 });
   };
-
+  const pressPage5Handler = () => {
+    navigation.navigate('QMaintenance', { page: 5 });
+  };
 
 
   return (
@@ -34,6 +36,9 @@ const Menu = ({ navigation }) => {
           </TouchableOpacity>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage3Handler}>
             <Text style={styles.buttonLabel}>Date Manager</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage5Handler}>
+            <Text style={styles.buttonLabel}>Maintenance Manager</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressPage4Handler}>
             <Text style={styles.buttonLabel}>Remove</Text>
