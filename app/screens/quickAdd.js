@@ -298,7 +298,7 @@ const CoolPage = () => {
         />
         <TextInput
           style={styles.input}
-          placeholder="YYYY-MM-DD"
+          placeholder="Date Entered, Format: YYYY-MM-DD"
           placeholderTextColor="#aaaaaa"
           onChangeText={(value) => handleInputChange('Date Entered', value)}
           value={formData['Date Entered']}

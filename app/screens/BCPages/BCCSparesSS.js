@@ -357,21 +357,23 @@ const styles = {
   },
   headerText: {
     fontWeight: 'bold',
-    flex: 1,
+    //flex: 1,
+    width:100,
   },
   dataRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    //justifyContent: 'space-between',
     padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
   },
   input: {
-    flex: 1,
+    
     borderWidth: 1,
     borderColor: '#ccc',
     padding: 5,
     marginRight: 10,
+    width:100,
   },
   deleteButton: {
     color: 'red',

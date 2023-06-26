@@ -28,7 +28,7 @@ const About = () => {
               <Text style={styles.bulletPoint}>Leave Time, Criticality, Ordered vs Recieved, Images: Complete</Text>
               <Text style={styles.bulletPoint}>Maintenance Schedule: Complete</Text>
               <Text style={styles.bulletPoint}>Bonuses: Web scraping, auto procurement: To Be Implemented In Future</Text>
-              <Text style={styles.bulletPoint}>Version: 2.9.3</Text>
+              <Text style={styles.bulletPoint}>Version: 3.0.0</Text>
             </View>
           </ScrollView>
         </View>
