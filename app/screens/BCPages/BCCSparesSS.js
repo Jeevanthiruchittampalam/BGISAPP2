@@ -120,7 +120,7 @@ const Spreadsheet = () => {
   };
 
   return (
-    //<ImageBackground source={require('../assets/darkmountains.jpg')} style={styles.backgroundImage}>
+    
     <ScrollView horizontal>
       <View style={styles.container}>
         <View style={styles.headerRow}>
@@ -339,7 +339,7 @@ const Spreadsheet = () => {
         </TouchableOpacity>
       </View>
     </ScrollView>
-    //</ImageBackground>
+    
   );
   
 };
@@ -351,13 +351,17 @@ const styles = {
   },
   headerRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    //justifyContent: 'space-between',
     backgroundColor: '#eee',
     padding: 10,
   },
   headerText: {
     fontWeight: 'bold',
     //flex: 1,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    padding: 5,
+    marginRight: 10,
     width:100,
   },
   dataRow: {
