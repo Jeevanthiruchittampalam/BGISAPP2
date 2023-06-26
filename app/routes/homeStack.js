@@ -1,6 +1,6 @@
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
-import BCSpares from '../screens/WelcomeScreen'
+import Welcome from '../screens/WelcomeScreen'
 import About from '../screens/about'
 import Login from '../screens/login'
 import ViewScreen from '../screens/view'
@@ -15,7 +15,7 @@ import ImageU from '../screens/Imageuploader'
 
 //BC Imports
 import BCMenu from '../screens/BCPages/BCMenu'
-import Welcome from '../screens/BCPages/BCCSparesSS'
+import BCSpares from '../screens/BCPages/BCCSparesSS'
 import BCWS from '../screens/BCPages/BCWS'
 import BCRemove from '../screens/BCPages/BCRemove'
 import BCDates from '../screens/BCPages/BCDates'

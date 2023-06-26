@@ -140,6 +140,14 @@ const Spreadsheet = () => {
           <Text style={styles.headerText} onPress={() => handleSort('Relationship to Parent Equipment/System')}>Relationship to Parent Equipment/System</Text>
           <Text style={styles.headerText} onPress={() => handleSort('Serial Number')}>Serial Number</Text>
           <Text style={styles.headerText} onPress={() => handleSort('Vendor')}>Vendor</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('Date Entered')}>Date Entered</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('dateRecieved')}>Date Recieved</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('requiredBy')}>Required By</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('estimatedArrivalInterval')}>Estimated Arrival Interval</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('Delivery Status')}>Delivery Status</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('Last Maintenance')}>Last Maintenance </Text>
+          <Text style={styles.headerText} onPress={() => handleSort('Upcoming Maintenance Date')}>Upcoming Maintenance Date</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('Maintenance Status')}>Maintenance Status</Text>
           
         </View>
         {items.map((item, index) => (
@@ -223,6 +231,46 @@ const Spreadsheet = () => {
               style={styles.input}
               value={item['Vendor']}
               onChangeText={(value) => handleChange(value, 'Vendor', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['Date Entered']}
+              onChangeText={(value) => handleChange(value, 'Date Entered', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['dateReceived']}
+              onChangeText={(value) => handleChange(value, 'dateRecieved', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['requiredBy']}
+              onChangeText={(value) => handleChange(value, 'requiredBy', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['estimatedArrivalInterval']}
+              onChangeText={(value) => handleChange(value, 'estimatedArrivalInterval', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['Delivery Status']}
+              onChangeText={(value) => handleChange(value, 'Delivery Status', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['Last Maintenace']}
+              onChangeText={(value) => handleChange(value, 'Last Maintenance', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['Upcoming Maintenance Date']}
+              onChangeText={(value) => handleChange(value, 'Upcoming Maintenance Date', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['Maintenance Status']}
+              onChangeText={(value) => handleChange(value, 'Maintenance Status', index)}
             />
             
             <TouchableOpacity onPress={() => handleDeleteItem(item.id)}>
@@ -326,6 +374,54 @@ const Spreadsheet = () => {
             value={newItem['Vendor']}
             onChangeText={(value) => setNewItem({ ...newItem, 'Vendor': value })}
             placeholder="Vendor"
+          />
+          <TextInput
+            style={styles.input}
+            value={newItem['Date Entered']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'Date Entered': value })}
+            placeholder="Date Entered YYYY-MM-DD"
+          />
+          <TextInput
+            style={styles.input}
+            value={newItem['dateRecieved']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'dateRecieved': value })}
+            placeholder="Date Recieved YYYY-MM-DD"
+          />
+          <TextInput
+            style={styles.input}
+            value={newItem['requiredBy']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'requiredBy': value })}
+            placeholder="Required By"
+          />
+          <TextInput
+            style={styles.input}
+            value={newItem['estimatedArrivalInterval']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'estimatedArrivalInterval': value })}
+            placeholder="Estimated Arrival Interval"
+          />
+          <TextInput
+            style={styles.input}
+            value={newItem['Delivery Status']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'Delivery Status': value })}
+            placeholder="Delivery Status"
+          />
+          <TextInput
+            style={styles.input}
+            value={newItem['Last Maintenance']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'Last Maintenance': value })}
+            placeholder="Last Maintenance"
+          />
+          <TextInput
+            style={styles.input}
+            value={newItem['Upcoming Maintenance Date']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'Upcoming Maintenance Date': value })}
+            placeholder="Upcoming Maintenance Date"
+          />
+          <TextInput
+            style={styles.input}
+            value={newItem['Maintenance Status']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'Maintenance Status': value })}
+            placeholder="Maintenance Status"
           />
           <TouchableOpacity onPress={handleAddItem}>
             <Text style={styles.addButton}>Add</Text>
