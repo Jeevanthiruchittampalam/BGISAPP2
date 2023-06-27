@@ -20,6 +20,10 @@ import BCWS from '../screens/BCPages/BCWS'
 import BCRemove from '../screens/BCPages/BCRemove'
 import BCDates from '../screens/BCPages/BCDates'
 import BCMaintenance from '../screens/BCPages/BCMaintenance'
+import TPO from '../screens/BCPages/TestpageOut'
+import TPI from '../screens/BCPages/TestPageIn'
+import TPS from '../screens/BCPages/LLLLL'
+
 //
 
 // Central Imports
@@ -48,6 +52,8 @@ import ABRemove from '../screens/ABPages/ABRemove'
 import ABDates from '../screens/ABPages/ABDates'
 import ABMaintenance from '../screens/ABPages/ABMaintenance'
 //
+
+
 
 
 const screens = {
@@ -435,6 +441,39 @@ const screens = {
   },
   QMaintenance: {
     screen: QMaintenance,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  TPO: {
+    screen: TPO,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  TPI: {
+    screen: TPI,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  TPS: {
+    screen: TPS,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',
