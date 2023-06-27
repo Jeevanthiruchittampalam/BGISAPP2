@@ -103,10 +103,24 @@ const Spreadsheet = () => {
     });
     setItems(sortedItems);
   };
+
+  const PressDelete = async () => {
+    try {
+      const collectionRef = firebase.firestore().collection('BCWS');
+      const snapshot = await collectionRef.get();
   
+      snapshot.forEach((doc) => {
+        doc.ref.delete();
+      });
+  
+      console.log('Deletion successful!');
+    } catch (error) {
+      console.error('Error deleting data:', error);
+    }
+  };
 
   return (
-    //<ImageBackground source={require('../assets/darkmountains.jpg')} style={styles.backgroundImage}>
+    
     <ScrollView horizontal>
       <View style={styles.container}>
         <View style={styles.headerRow}>
@@ -126,7 +140,12 @@ const Spreadsheet = () => {
           <Text style={styles.headerText} onPress={() => handleSort('Relationship to Parent Equipment/System')}>Relationship to Parent Equipment/System</Text>
           <Text style={styles.headerText} onPress={() => handleSort('Serial Number')}>Serial Number</Text>
           <Text style={styles.headerText} onPress={() => handleSort('Vendor')}>Vendor</Text>
-          
+          <Text style={styles.headerText} onPress={() => handleSort('Date Entered')}>Date Entered</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('dateRecieved')}>Date Recieved</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('requiredBy')}>Required By</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('estimatedArrivalInterval')}>Estimated Arrival Interval</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('Delivery Status')}>Delivery Status</Text>
+       
         </View>
         {items.map((item, index) => (
           <View style={styles.dataRow} key={item.id}>
@@ -210,6 +229,33 @@ const Spreadsheet = () => {
               value={item['Vendor']}
               onChangeText={(value) => handleChange(value, 'Vendor', index)}
             />
+            <TextInput
+              style={styles.input}
+              value={item['Date Entered']}
+              onChangeText={(value) => handleChange(value, 'Date Entered', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['dateReceived']}
+              onChangeText={(value) => handleChange(value, 'dateRecieved', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['requiredBy']}
+              onChangeText={(value) => handleChange(value, 'requiredBy', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['estimatedArrivalInterval']}
+              onChangeText={(value) => handleChange(value, 'estimatedArrivalInterval', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['Delivery Status']}
+              onChangeText={(value) => handleChange(value, 'Delivery Status', index)}
+            />
+            
+           
             
             <TouchableOpacity onPress={() => handleDeleteItem(item.id)}>
               <Text style={styles.deleteButton}>Delete</Text>
@@ -313,16 +359,50 @@ const Spreadsheet = () => {
             onChangeText={(value) => setNewItem({ ...newItem, 'Vendor': value })}
             placeholder="Vendor"
           />
+          <TextInput
+            style={styles.input}
+            value={newItem['Date Entered']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'Date Entered': value })}
+            placeholder="Date Entered YYYY-MM-DD"
+          />
+          <TextInput
+            style={styles.input}
+            value={newItem['dateRecieved']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'dateRecieved': value })}
+            placeholder="Date Recieved YYYY-MM-DD"
+          />
+          <TextInput
+            style={styles.input}
+            value={newItem['requiredBy']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'requiredBy': value })}
+            placeholder="Required By"
+          />
+          <TextInput
+            style={styles.input}
+            value={newItem['estimatedArrivalInterval']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'estimatedArrivalInterval': value })}
+            placeholder="Estimated Arrival Interval"
+          />
+          <TextInput
+            style={styles.input}
+            value={newItem['Delivery Status']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'Delivery Status': value })}
+            placeholder="Delivery Status"
+          />
+          
           <TouchableOpacity onPress={handleAddItem}>
             <Text style={styles.addButton}>Add</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity onPress={handleConfirm}>
+        <TouchableOpacity onPress={
+          handleConfirm
+          //PressDelete()
+        }>
           <Text style={styles.confirmButton}>Confirm</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
-    //</ImageBackground>
+    
   );
   
 };
@@ -334,27 +414,33 @@ const styles = {
   },
   headerRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    //justifyContent: 'space-between',
     backgroundColor: '#eee',
     padding: 10,
   },
   headerText: {
     fontWeight: 'bold',
-    flex: 1,
+    //flex: 1,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    padding: 5,
+    marginRight: 10,
+    width:100,
   },
   dataRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    //justifyContent: 'space-between',
     padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
   },
   input: {
-    flex: 1,
+    
     borderWidth: 1,
     borderColor: '#ccc',
     padding: 5,
     marginRight: 10,
+    width:100,
   },
   deleteButton: {
     color: 'red',

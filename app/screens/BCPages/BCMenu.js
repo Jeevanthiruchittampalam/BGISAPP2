@@ -35,15 +35,6 @@ const Menu = ({ navigation }) => {
           <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage2Handler}>
             <Text style={styles.buttonLabel}>WishList</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage3Handler}>
-            <Text style={styles.buttonLabel}>Date Manager</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage5Handler}>
-            <Text style={styles.buttonLabel}>Maintenance Manager</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressPage4Handler}>
-            <Text style={styles.buttonLabel}>Remove</Text>
-          </TouchableOpacity>
         </View>
       </ImageBackground>
     </View>
