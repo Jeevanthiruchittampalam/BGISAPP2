@@ -11,8 +11,14 @@ const Spreadsheet = () => {
   const [newItem, setNewItem] = useState({
     'Region': '',
     'Building': '',
+    'Building ID': '',
+    'Category': '',
+    'Next Maintenance Cycle': '',
     'Critical Spare Description': '',
-    '(Model Name/Number)': '',
+    'Manufacturer': '',
+    'Model': '',
+    'Serial #': '',
+    'Size': '',
     'Parent Equipment/System': '',
     'Relationship to parent equipment/ system': '',
     'Reason Critical': '',
@@ -48,22 +54,28 @@ const Spreadsheet = () => {
       const newItemRef = await firebase.firestore().collection('ELEC').add(newItem);
       setItems([...items, { id: newItemRef.id, ...newItem }]);
       setNewItem({
-    'Region': '',
-    'Building': '',
-    'Critical Spare Description': '',
-    '(Model Name/Number)': '',
-    'Parent Equipment/System': '',
-    'Relationship to parent equipment/ system': '',
-    'Reason Critical': '',
-    'Criticality of Part ': '',
-    'Notes': '',
-    'Source (supplier)': '',
-    'Lead Time  to Delivery (days/weeks)': '',
-    'Budget Estimate ($)': '',
-    'CAP/OPEX': '',
-    'Inventory on site': '',
-    'Inventory Location': '',
-    'Comments': ''
+        'Region': '',
+        'Building': '',
+        'Building ID': '',
+        'Category': '',
+        'Next Maintenance Cycle': '',
+        'Critical Spare Description': '',
+        'Manufacturer': '',
+        'Model': '',
+        'Serial #': '',
+        'Size': '',
+        'Parent Equipment/System': '',
+        'Relationship to parent equipment/ system': '',
+        'Reason Critical': '',
+        'Criticality of Part ': '',
+        'Notes': '',
+        'Source (supplier)': '',
+        'Lead Time  to Delivery (days/weeks)': '',
+        'Budget Estimate ($)': '',
+        'CAP/OPEX': '',
+        'Inventory on site': '',
+        'Inventory Location': '',
+        'Comments': ''
       });
     } catch (error) {
       console.log('Error adding item:', error);
@@ -121,47 +133,38 @@ const Spreadsheet = () => {
 
   return (
 
-    /* 'Region': '',
-    'Building': '',
-    'Critical Spare Description': '',
-    '(Model Name/Number)': '',
-    'Parent Equipment/System': '',
-    'Relationship to parent equipment/ system': '',
-    'Reason Critical': '',
-    'Criticality of Part ': '',
-    'Notes': '',
-    'Source (supplier)': '',
-    'Lead Time  to Delivery (days/weeks)': '',
-    'Budget Estimate ($)': '',
-    'CAP/OPEX': '',
-    'Inventory on site': '',
-    'Inventory Location': '',
-    'Comments': ''*/
+
     
     <ScrollView horizontal>
       <View style={styles.container}>
         <View style={styles.headerRow}>
-          <Text style={styles.headerText} onPress={() => handleSort('Region')}>CLLI Code</Text>
-          <Text style={styles.headerText} onPress={() => handleSort('Building')}>Building Category</Text>          
-          <Text style={styles.headerText} onPress={() => handleSort('Critical Spare Description')}>Building Name</Text>
-          <Text style={styles.headerText}onPress={() => handleSort('(Model Name/Number)')}>Building Type</Text>
-          <Text style={styles.headerText} onPress={() => handleSort('Parent Equipment/System')}>Manufacturer</Text>
-          <Text style={styles.headerText} onPress={() => handleSort('Relationship to parent equipment/ system')}>Model</Text>
-          <Text style={styles.headerText} onPress={() => handleSort('Reason Critical')}>Notes</Text>
-          <Text style={styles.headerText} onPress={() => handleSort('Criticality of Part')}>Parent Equipment/System</Text>
-          <Text style={styles.headerText} onPress={() => handleSort('Notes')}>Part Description</Text>
-          <Text style={styles.headerText} onPress={() => handleSort('Source (supplier)')}>Part Location</Text>
-          <Text style={styles.headerText} onPress={() => handleSort('Lead Time  to Delivery (days/weeks)')}>Last Cost</Text>
-          <Text style={styles.headerText} onPress={() => handleSort('Budget Estimate ($)')}>Quantity on Site</Text>
-          <Text style={styles.headerText} onPress={() => handleSort('CAP/OPEX')}>Region</Text>
-          <Text style={styles.headerText} onPress={() => handleSort('Inventory on site')}>Relationship to Parent Equipment/System</Text>
-          <Text style={styles.headerText} onPress={() => handleSort('Inventory Location')}>Serial Number</Text>
-          <Text style={styles.headerText} onPress={() => handleSort('Comments')}>Vendor</Text>
+        <Text style={styles.headerText} onPress={() => handleSort('Region')}>Region</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Building')}>Building</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Building ID')}>Building ID</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Category')}>Category</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Next Maintenance Cycle')}>Next Maintenance Cycle</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Critical Spare Description')}>Critical Spare Description</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Manufacturer')}>Manufacturer</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Model')}>Model</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Serial #')}>Serial #</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Size')}>Size</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Parent Equipment/System')}>Parent Equipment/System</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Relationship to parent equipment/ system')}>Relationship to parent equipment/system</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Reason Critical')}>Reason Critical</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Criticality of Part')}>Criticality of Part</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Notes')}>Notes</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Source (supplier)')}>Source (supplier)</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Lead Time to Delivery (days/weeks)')}>Lead Time to Delivery (days/weeks)</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Budget Estimate ($)')}>Budget Estimate ($)</Text>
+<Text style={styles.headerText} onPress={() => handleSort('CAP/OPEX')}>CAP/OPEX</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Inventory on site')}>Inventory on site</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Inventory Location')}>Inventory Location</Text>
+<Text style={styles.headerText} onPress={() => handleSort('Comments')}>Comments</Text>
 
         </View>
         {items.map((item, index) => (
           <View style={styles.dataRow} key={item.id}>
-            <TextInput
+<TextInput
   style={styles.input}
   value={item['Region']}
   onChangeText={(value) => handleChange(value, 'Region', index)}
@@ -173,13 +176,43 @@ const Spreadsheet = () => {
 />
 <TextInput
   style={styles.input}
+  value={item['Building ID']}
+  onChangeText={(value) => handleChange(value, 'Building ID', index)}
+/>
+<TextInput
+  style={styles.input}
+  value={item['Category']}
+  onChangeText={(value) => handleChange(value, 'Category', index)}
+/>
+<TextInput
+  style={styles.input}
+  value={item['Next Maintenance Cycle']}
+  onChangeText={(value) => handleChange(value, 'Next Maintenance Cycle', index)}
+/>
+<TextInput
+  style={styles.input}
   value={item['Critical Spare Description']}
   onChangeText={(value) => handleChange(value, 'Critical Spare Description', index)}
 />
 <TextInput
   style={styles.input}
-  value={item['(Model Name/Number)']}
-  onChangeText={(value) => handleChange(value, '(Model Name/Number)', index)}
+  value={item['Manufacturer']}
+  onChangeText={(value) => handleChange(value, 'Manufacturer', index)}
+/>
+<TextInput
+  style={styles.input}
+  value={item['Model']}
+  onChangeText={(value) => handleChange(value, 'Model', index)}
+/>
+<TextInput
+  style={styles.input}
+  value={item['Serial #']}
+  onChangeText={(value) => handleChange(value, 'Serial #', index)}
+/>
+<TextInput
+  style={styles.input}
+  value={item['Size']}
+  onChangeText={(value) => handleChange(value, 'Size', index)}
 />
 <TextInput
   style={styles.input}
@@ -242,6 +275,7 @@ const Spreadsheet = () => {
   onChangeText={(value) => handleChange(value, 'Comments', index)}
 />
 
+
             
             
             <TouchableOpacity onPress={() => handleDeleteItem(item.id)}>
@@ -260,24 +294,36 @@ const Spreadsheet = () => {
   style={styles.input}
   value={newItem['Building']}
   onChangeText={(value) => setNewItem({ ...newItem, 'Building': value })}
-  placeholder="Building Category"
+  placeholder="Building"
+/>
+<TextInput
+  style={styles.input}
+  value={newItem['Building ID']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Building ID': value })}
+  placeholder="Building ID"
+/>
+<TextInput
+  style={styles.input}
+  value={newItem['Category']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Category': value })}
+  placeholder="Category"
+/>
+<TextInput
+  style={styles.input}
+  value={newItem['Next Maintenance Cycle']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Next Maintenance Cycle': value })}
+  placeholder="Next Maintenance Cycle"
 />
 <TextInput
   style={styles.input}
   value={newItem['Critical Spare Description']}
   onChangeText={(value) => setNewItem({ ...newItem, 'Critical Spare Description': value })}
-  placeholder="Building Name"
+  placeholder="Critical Spare Description"
 />
 <TextInput
   style={styles.input}
-  value={newItem['(Model Name/Number)']}
-  onChangeText={(value) => setNewItem({ ...newItem, '(Model Name/Number)': value })}
-  placeholder="Building Type"
-/>
-<TextInput
-  style={styles.input}
-  value={newItem['Parent Equipment/System']}
-  onChangeText={(value) => setNewItem({ ...newItem, 'Parent Equipment/System': value })}
+  value={newItem['Manufacturer']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Manufacturer': value })}
   placeholder="Manufacturer"
 />
 <TextInput
@@ -288,9 +334,15 @@ const Spreadsheet = () => {
 />
 <TextInput
   style={styles.input}
-  value={newItem['Notes']}
-  onChangeText={(value) => setNewItem({ ...newItem, 'Notes': value })}
-  placeholder="Notes"
+  value={newItem['Serial #']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Serial #': value })}
+  placeholder="Serial #"
+/>
+<TextInput
+  style={styles.input}
+  value={newItem['Size']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Size': value })}
+  placeholder="Size"
 />
 <TextInput
   style={styles.input}
@@ -300,51 +352,69 @@ const Spreadsheet = () => {
 />
 <TextInput
   style={styles.input}
-  value={newItem['Part Description']}
-  onChangeText={(value) => setNewItem({ ...newItem, 'Part Description': value })}
-  placeholder="Part Description"
+  value={newItem['Relationship to parent equipment/ system']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Relationship to parent equipment/ system': value })}
+  placeholder="Relationship to parent equipment/system"
 />
 <TextInput
   style={styles.input}
-  value={newItem['Part Location']}
-  onChangeText={(value) => setNewItem({ ...newItem, 'Part Location': value })}
-  placeholder="Part Location"
+  value={newItem['Reason Critical']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Reason Critical': value })}
+  placeholder="Reason Critical"
 />
 <TextInput
   style={styles.input}
-  value={newItem['Last Cost']}
-  onChangeText={(value) => setNewItem({ ...newItem, 'Last Cost': value })}
-  placeholder="Last Cost"
+  value={newItem['Criticality of Part ']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Criticality of Part ': value })}
+  placeholder="Criticality of Part"
 />
 <TextInput
   style={styles.input}
-  value={newItem['Quantity on Site']}
-  onChangeText={(value) => setNewItem({ ...newItem, 'Quantity on Site': value })}
-  placeholder="Quantity on Site"
+  value={newItem['Notes']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Notes': value })}
+  placeholder="Notes"
 />
 <TextInput
   style={styles.input}
-  value={newItem['Region']}
-  onChangeText={(value) => setNewItem({ ...newItem, 'Region': value })}
-  placeholder="Region"
+  value={newItem['Source (supplier)']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Source (supplier)': value })}
+  placeholder="Source (supplier)"
 />
 <TextInput
   style={styles.input}
-  value={newItem['Relationship to Parent Equipment/System']}
-  onChangeText={(value) => setNewItem({ ...newItem, 'Relationship to Parent Equipment/System': value })}
-  placeholder="Relationship to Parent Equipment/System"
+  value={newItem['Lead Time  to Delivery (days/weeks)']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Lead Time  to Delivery (days/weeks)': value })}
+  placeholder="Lead Time to Delivery (days/weeks)"
 />
 <TextInput
   style={styles.input}
-  value={newItem['Serial Number']}
-  onChangeText={(value) => setNewItem({ ...newItem, 'Serial Number': value })}
-  placeholder="Serial Number"
+  value={newItem['Budget Estimate ($)']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Budget Estimate ($)': value })}
+  placeholder="Budget Estimate ($)"
 />
 <TextInput
   style={styles.input}
-  value={newItem['Vendor']}
-  onChangeText={(value) => setNewItem({ ...newItem, 'Vendor': value })}
-  placeholder="Vendor"
+  value={newItem['CAP/OPEX']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'CAP/OPEX': value })}
+  placeholder="CAP/OPEX"
+/>
+<TextInput
+  style={styles.input}
+  value={newItem['Inventory on site']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Inventory on site': value })}
+  placeholder="Inventory on site"
+/>
+<TextInput
+  style={styles.input}
+  value={newItem['Inventory Location']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Inventory Location': value })}
+  placeholder="Inventory Location"
+/>
+<TextInput
+  style={styles.input}
+  value={newItem['Comments']}
+  onChangeText={(value) => setNewItem({ ...newItem, 'Comments': value })}
+  placeholder="Comments"
 />
 
           

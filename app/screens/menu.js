@@ -55,15 +55,14 @@ const Menu = ({ navigation }) => {
             <Text style={styles.buttonLabel}>QC</Text>
           </TouchableOpacity>
 
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressSummaryHandler}>
+            <Text style={styles.buttonLabel}>Summary HVAC/ELEC</Text>
+          </TouchableOpacity>
+
           <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressEditHandler}>
             <Text style={styles.buttonLabel}>Quick Add</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressHistoryHandler}>
-            <Text style={styles.buttonLabel}>Edit History</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressSummaryHandler}>
-            <Text style={styles.buttonLabel}>Summary HVAC/ELEC</Text>
-          </TouchableOpacity>
+          
           <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressImportHandler}>
             <Text style={styles.buttonLabel}>Import</Text>
           </TouchableOpacity>
