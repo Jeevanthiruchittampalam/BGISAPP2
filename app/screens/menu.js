@@ -2,8 +2,8 @@ import React from 'react';
 import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from 'react-native';
 
 const Menu = ({ navigation }) => {
-  const pressAbout1Handler = () => {
-    navigation.navigate('ImageU');
+  const pressSummaryHandler = () => {
+    navigation.navigate('TPS');
   };
 
   const pressEditHandler = () => {
@@ -61,8 +61,8 @@ const Menu = ({ navigation }) => {
           <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressHistoryHandler}>
             <Text style={styles.buttonLabel}>Edit History</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressAbout1Handler}>
-            <Text style={styles.buttonLabel}>Tool/Part Descriptions</Text>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressSummaryHandler}>
+            <Text style={styles.buttonLabel}>Summary HVAC/ELEC</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressImportHandler}>
             <Text style={styles.buttonLabel}>Import</Text>
