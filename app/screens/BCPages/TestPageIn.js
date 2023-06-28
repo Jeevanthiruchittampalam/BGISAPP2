@@ -11,7 +11,7 @@ const ImportPage = () => {
     try {
       const document = await DocumentPicker.getDocumentAsync({
         type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-      });
+      }); 
 
       if (document.type === 'success') {
         setLoading(true);

@@ -10,16 +10,6 @@ const Menu = ({ navigation }) => {
     navigation.navigate('BCWS', { page: 2 });
   };
 
-  const pressPage3Handler = () => {
-    navigation.navigate('TPS', { page: 3 });
-  };
-
-  const pressPage4Handler = () => {
-    navigation.navigate('TPO', { page: 4 });
-  };
-  const pressPage5Handler = () => {
-    navigation.navigate('TPI', { page: 5 });
-  };
 
 
 
@@ -35,15 +25,7 @@ const Menu = ({ navigation }) => {
           <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage2Handler}>
             <Text style={styles.buttonLabel}>WishList</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage5Handler}>
-            <Text style={styles.buttonLabel}>TestIn</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage4Handler}>
-            <Text style={styles.buttonLabel}>TestOut</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage3Handler}>
-            <Text style={styles.buttonLabel}>SHOW</Text>
-          </TouchableOpacity>
+
         </View>
       </ImageBackground>
     </View>

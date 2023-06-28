@@ -20,7 +20,7 @@ const Menu = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../../assets/test3.jpg')} style={styles.backgroundImage}>
-        <Text style={styles.logo}>Summary</Text>
+        <Text style={styles.logo}>HVAC/ELEC</Text>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage1Handler}>
