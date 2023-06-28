@@ -3,38 +3,36 @@ import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from 'react
 
 const Menu = ({ navigation }) => {
   const pressPage1Handler = () => {
-    navigation.navigate('ABSpares', { page: 1 });
+    navigation.navigate('ELEC', { page: 1 });
   };
 
   const pressPage2Handler = () => {
-    navigation.navigate('ABWS', { page: 2 });
+    navigation.navigate('HVAC', { page: 2 });
   };
 
   const pressPage3Handler = () => {
-    navigation.navigate('ABDates', { page: 3 });
+    navigation.navigate('SummaryI', { page: 3 });
   };
 
-  const pressPage4Handler = () => {
-    navigation.navigate('ABRemove', { page: 4 });
-  };
-  const pressPage5Handler = () => {
-    navigation.navigate('ABMaintenance');
-  };
 
 
 
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../../assets/test3.jpg')} style={styles.backgroundImage}>
-        <Text style={styles.logo}>Alberta</Text>
+        <Text style={styles.logo}>Summary</Text>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage1Handler}>
-            <Text style={styles.buttonLabel}>Critical Spares</Text>
+            <Text style={styles.buttonLabel}>ELEC</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage2Handler}>
-            <Text style={styles.buttonLabel}>WishList</Text>
+            <Text style={styles.buttonLabel}>HVAC</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressPage3Handler}>
+            <Text style={styles.buttonLabel}>Summary</Text>
+          </TouchableOpacity>
+          
 
         </View>
       </ImageBackground>

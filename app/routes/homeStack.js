@@ -53,7 +53,14 @@ import ABDates from '../screens/ABPages/ABDates'
 import ABMaintenance from '../screens/ABPages/ABMaintenance'
 //
 
+//Summary
 
+import ELEC from '../screens/Summary/ELEC'
+import HVAC from '../screens/Summary/HVAC'
+import SummaryI from '../screens/Summary/SummaryInfo'
+import SummaryM from '../screens/Summary/SummaryMenu'
+
+//---
 
 
 const screens = {
@@ -483,6 +490,56 @@ const screens = {
     }),
     
   },
+
+  //Summary
+  ELEC: {
+    screen: ELEC,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  HVAC: {
+    screen: HVAC,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+  SummaryM: {
+    screen: SummaryM,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+  SummaryI: {
+    screen: SummaryI,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+  //--------
 
   //--------
 };

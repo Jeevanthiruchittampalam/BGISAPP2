@@ -3,7 +3,7 @@ import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from 'react
 
 const Menu = ({ navigation }) => {
   const pressSummaryHandler = () => {
-    navigation.navigate('TPS');
+    navigation.navigate('SummaryM');
   };
 
   const pressEditHandler = () => {
