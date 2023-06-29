@@ -20,7 +20,7 @@ const Spreadsheet = () => {
     'Part Description': '',
     'Part Location': '',
     'Last Cost': '',
-    'Quantity on Site': '',
+    'Quantity On Site': '',
     'Region': '',
     'Relationship to Parent Equipment/System': '',
     'Serial Number': '',
@@ -59,7 +59,7 @@ const Spreadsheet = () => {
         'Part Description': '',
         'Part Location': '',
         'Last Cost': '',
-        'Quantity on Site': '',
+        'Quantity On Site': '',
         'Region': '',
         'Relationship to Parent Equipment/System': '',
         'Serial Number': '',
@@ -135,7 +135,7 @@ const Spreadsheet = () => {
           <Text style={styles.headerText} onPress={() => handleSort('Part Description')}>Part Description</Text>
           <Text style={styles.headerText} onPress={() => handleSort('Part Location')}>Part Location</Text>
           <Text style={styles.headerText} onPress={() => handleSort('Last Cost')}>Last Cost</Text>
-          <Text style={styles.headerText} onPress={() => handleSort('Quantity on Site')}>Quantity on Site</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('Quantity On Site')}>Quantity On Site</Text>
           <Text style={styles.headerText} onPress={() => handleSort('Region')}>Region</Text>
           <Text style={styles.headerText} onPress={() => handleSort('Relationship to Parent Equipment/System')}>Relationship to Parent Equipment/System</Text>
           <Text style={styles.headerText} onPress={() => handleSort('Serial Number')}>Serial Number</Text>
@@ -209,8 +209,8 @@ const Spreadsheet = () => {
             />
             <TextInput
               style={styles.input}
-              value={item['Quantity on Site']}
-              onChangeText={(value) => handleChange(value, 'Quantity on Site', index)}
+              value={item['Quantity On Site']}
+              onChangeText={(value) => handleChange(value, 'Quantity On Site', index)}
             />
             <TextInput
               style={styles.input}
@@ -347,9 +347,9 @@ const Spreadsheet = () => {
           />
           <TextInput
             style={styles.input}
-            value={newItem['Quantity on Site']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Quantity on Site': value })}
-            placeholder="Quantity on Site"
+            value={newItem['Quantity On Site']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'Quantity On Site': value })}
+            placeholder="Quantity On Site"
           />
           <TextInput
             style={styles.input}

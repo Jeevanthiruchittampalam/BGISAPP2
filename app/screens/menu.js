@@ -2,9 +2,7 @@ import React from 'react';
 import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from 'react-native';
 
 const Menu = ({ navigation }) => {
-  const pressSummaryHandler = () => {
-    navigation.navigate('SummaryM');
-  };
+
 
   const pressEditHandler = () => {
     navigation.navigate('Edit');
@@ -35,6 +33,9 @@ const Menu = ({ navigation }) => {
   const pressHistoryHandler = () => {
     navigation.navigate('History');
   };
+  const pressSummaryHandler = () => {
+    navigation.navigate('Summary');
+  };
 
   return (
     <View style={styles.container}>
@@ -57,6 +58,10 @@ const Menu = ({ navigation }) => {
 
           <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressSummaryHandler}>
             <Text style={styles.buttonLabel}>HVAC/ELEC</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressSummaryHandler}>
+            <Text style={styles.buttonLabel}>Summary</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressEditHandler}>

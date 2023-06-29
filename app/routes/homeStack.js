@@ -12,46 +12,27 @@ import FileOut from '../screens/fileOut'
 import History from '../screens/history'
 import SSF from '../screens/spreadsheet'
 import ImageU from '../screens/Imageuploader'
+import Summary from '../screens/summary'
 
 //BC Imports
 import BCMenu from '../screens/BCPages/BCMenu'
 import BCSpares from '../screens/BCPages/BCCSparesSS'
 import BCWS from '../screens/BCPages/BCWS'
-import BCRemove from '../screens/BCPages/BCRemove'
-import BCDates from '../screens/BCPages/BCDates'
-import BCMaintenance from '../screens/BCPages/BCMaintenance'
-import TPO from '../screens/BCPages/TestpageOut'
-import TPI from '../screens/BCPages/TestPageIn'
-import TPS from '../screens/BCPages/LLLLL'
-
-//
 
 // Central Imports
 import CMenu from '../screens/CentralPages/CMenu'
 import CSpares from '../screens/CentralPages/CCSparesSS'
 import CWS from '../screens/CentralPages/CWS'
-import CRemove from '../screens/CentralPages/CRemove'
-import CDates from '../screens/CentralPages/CDates'
-import CMaintenance from '../screens/CentralPages/CMaintenance'
-//
-//
+
 // Quebec Imports
 import QMenu from '../screens/QCPages/QMenu'
 import QSpares from '../screens/QCPages/QCSparesSS'
 import QWS from '../screens/QCPages/QWS'
-import QRemove from '../screens/QCPages/QRemove'
-import QDates from '../screens/QCPages/QDates'
-import QMaintenance from '../screens/QCPages/QMaintenance'
-//
 
 // Alberta Imports
 import ABMenu from '../screens/ABPages/ABMenu'
 import ABSpares from '../screens/ABPages/ABCSparesSS'
 import ABWS from '../screens/ABPages/ABWS'
-import ABRemove from '../screens/ABPages/ABRemove'
-import ABDates from '../screens/ABPages/ABDates'
-import ABMaintenance from '../screens/ABPages/ABMaintenance'
-//
 
 //Summary
 
@@ -61,8 +42,6 @@ import SummaryI from '../screens/Summary/SummaryInfo'
 import SummaryM from '../screens/Summary/SummaryMenu'
 
 //---
-
-
 const screens = {
   Welcome: {
     screen: Welcome,
@@ -216,39 +195,7 @@ const screens = {
     }),
     
   },
-  BCRemove: {
-    screen: BCRemove,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-  BCDates: {
-    screen: BCDates,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-  BCMaintenance: {
-    screen: BCMaintenance,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
+
 
   //--------
   //------Central
@@ -285,39 +232,7 @@ const screens = {
     }),
     
   },
-  CRemove: {
-    screen: CRemove,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-  CDates: {
-    screen: CDates,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-  CMaintenance: {
-    screen: CMaintenance,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
+
 
   //--------
   //------Alberta
@@ -354,40 +269,7 @@ const screens = {
     }),
     
   },
-  ABRemove: {
-    screen: ABRemove,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-  ABDates: {
-    screen: ABDates,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-  ABMaintenance: {
-    screen: ABMaintenance,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-  
+
 
   //--------
   //------Quebec
@@ -424,72 +306,8 @@ const screens = {
     }),
     
   },
-  QRemove: {
-    screen: QRemove,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-  QDates: {
-    screen: QDates,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-  QMaintenance: {
-    screen: QMaintenance,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-  TPO: {
-    screen: TPO,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-  TPI: {
-    screen: TPI,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-  TPS: {
-    screen: TPS,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
+
+  
 
   //Summary
   ELEC: {
@@ -542,6 +360,18 @@ const screens = {
   //--------
 
   //--------
+
+  Summary: {
+    screen: Summary,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
 };
 
 
