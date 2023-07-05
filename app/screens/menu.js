@@ -34,7 +34,7 @@ const Menu = ({ navigation }) => {
     navigation.navigate('History');
   };
   const pressSummaryHandler = () => {
-    navigation.navigate('Summary');
+    navigation.navigate('SummaryM');
   };
 
   return (

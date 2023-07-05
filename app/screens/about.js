@@ -9,7 +9,7 @@ const About = () => {
           <View style={styles.textContainer}>
             <View style={styles.ovalShape}>
               <Text style={styles.text}>
-                This Prototype Application was designed to improve upon the current inventory and procurement system
+                This Application was designed to improve upon the current inventory and procurement system
                 used at BGIS.
               </Text>
             </View>
@@ -28,7 +28,7 @@ const About = () => {
               <Text style={styles.bulletPoint}>Leave Time, Criticality, Ordered vs Recieved, Images: Complete</Text>
               <Text style={styles.bulletPoint}>Maintenance Schedule: Complete</Text>
               <Text style={styles.bulletPoint}>Bonuses: Web scraping, auto procurement: To Be Implemented In Future</Text>
-              <Text style={styles.bulletPoint}>Version: 3.0.0</Text>
+              <Text style={styles.bulletPoint}>Version: 3.1.2</Text>
             </View>
           </ScrollView>
         </View>
