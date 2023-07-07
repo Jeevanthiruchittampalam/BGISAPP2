@@ -53,10 +53,10 @@ const Menu = ({ navigation }) => {
             <Text style={styles.buttonLabel}>Quick Add</Text>
           </TouchableOpacity>
           
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressImportHandler}>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressImportHandler}>
             <Text style={styles.buttonLabel}>Import</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressExportHandler}>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressExportHandler}>
             <Text style={styles.buttonLabel}>Export</Text>
           </TouchableOpacity>
         </View>
@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  //71d9e2
   backgroundImage: {
     flex: 1,
     resizeMode: 'cover',

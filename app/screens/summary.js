@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { firebase } from '../../config';
 import 'firebase/firestore';
 
@@ -306,7 +306,12 @@ const SummaryPage = () => {
         <Text style={styles.heading}>Critical Spares</Text>
 
         <View style={styles.tableContainer}>
-          <Text style={styles.tableTitle}>Region: AB</Text>
+
+        <TouchableOpacity style={[styles.button, { backgroundColor: 'orange' }]} >
+        <Text style={styles.tableTitle}>Region: AB</Text>
+          </TouchableOpacity>
+          
+
           <View style={styles.table}>
             <View style={styles.tableHeader}>
               <Text style={styles.columnHeader}>Region</Text>
@@ -329,7 +334,9 @@ const SummaryPage = () => {
         </View>
 
         <View style={styles.tableContainer}>
-          <Text style={styles.tableTitle}>Region: BC</Text>
+        <TouchableOpacity style={[styles.button, { backgroundColor: '#39FF14' }]} >
+              <Text style={styles.tableTitle}>Region: BC</Text>
+        </TouchableOpacity>   
           <View style={styles.table}>
             <View style={styles.tableHeader}>
               <Text style={styles.columnHeader}>Region</Text>
@@ -352,7 +359,9 @@ const SummaryPage = () => {
         </View>
 
         <View style={styles.tableContainer}>
-          <Text style={styles.tableTitle}>Region: Central</Text>
+        <TouchableOpacity style={[styles.button, { backgroundColor: '#3399FF' }]} >
+              <Text style={styles.tableTitle}>Region: Central</Text>
+        </TouchableOpacity> 
           <View style={styles.table}>
             <View style={styles.tableHeader}>
               <Text style={styles.columnHeader}>Region</Text>
@@ -377,7 +386,9 @@ const SummaryPage = () => {
         </View>
 
         <View style={styles.tableContainer}>
-          <Text style={styles.tableTitle}>Region: QC</Text>
+        <TouchableOpacity style={[styles.button, { backgroundColor: '#8A2BE2' }]} >
+        <Text style={[styles.tableTitle, { color: "black" }]}>Region: QC</Text>
+        </TouchableOpacity> 
           <View style={styles.table}>
             <View style={styles.tableHeader}>
               <Text style={styles.columnHeader}>Region</Text>
@@ -413,111 +424,7 @@ const SummaryPage = () => {
           </View>
         </View>
 
-        <Text style={styles.heading}> Wish List </Text>
-
-        <View style={styles.tableContainer}>
-          <Text style={styles.tableTitle}>Region: AB</Text>
-          <View style={styles.table}>
-            <View style={styles.tableHeader}>
-              <Text style={styles.columnHeader}>Region</Text>
-              <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Cost</Text>
-            </View>
-            {uniqueBuildingsAB2.map((building, index) => (
-              <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>AB</Text>
-                <Text style={styles.cell}>{building}</Text>
-                <Text style={styles.cell}>{column4DataAB2[building] || ''}</Text>
-              </View>
-            ))}
-            <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>AB Total</Text>
-              <Text style={styles.cell}></Text>
-              <Text style={[styles.cell, styles.footerCell]}>{abTotalYesAB2}</Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={styles.tableContainer}>
-          <Text style={styles.tableTitle}>Region: BC</Text>
-          <View style={styles.table}>
-            <View style={styles.tableHeader}>
-              <Text style={styles.columnHeader}>Region</Text>
-              <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Cost</Text>
-            </View>
-            {uniqueBuildingsBC2.map((building, index) => (
-              <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>BC</Text>
-                <Text style={styles.cell}>{building}</Text>
-                <Text style={styles.cell}>{column4DataBC2[building] || ''}</Text>
-              </View>
-            ))}
-            <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>BC Total</Text>
-              <Text style={styles.cell}></Text>
-              <Text style={[styles.cell, styles.footerCell]}>{abTotalYesBC2}</Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={styles.tableContainer}>
-          <Text style={styles.tableTitle}>Region: Central</Text>
-          <View style={styles.table}>
-            <View style={styles.tableHeader}>
-              <Text style={styles.columnHeader}>Region</Text>
-              <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Cost</Text>
-            </View>
-            {uniqueBuildingsCentral2.map((building, index) => (
-              <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>Central</Text>
-                <Text style={styles.cell}>{building}</Text>
-                <Text style={styles.cell}>{column4DataCentral2[building] || ''}</Text>
-              </View>
-            ))}
-            <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>Central Total</Text>
-              <Text style={styles.cell}></Text>
-              <Text style={[styles.cell, styles.footerCell]}>{abTotalYesCentral2}</Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={styles.tableContainer}>
-          <Text style={styles.tableTitle}>Region: QC</Text>
-          <View style={styles.table}>
-            <View style={styles.tableHeader}>
-              <Text style={styles.columnHeader}>Region</Text>
-              <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Cost</Text>
-
-            </View>
-            {uniqueBuildingsQC2.map((building, index) => (
-              <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>QC</Text>
-                <Text style={styles.cell}>{building}</Text>
-                <Text style={styles.cell}>{column4DataQC[building] || ''}</Text>
-              </View>
-            ))}
-            <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>QC Total</Text>
-              <Text style={styles.cell}></Text>
-              <Text style={[styles.cell, styles.footerCell]}>{abTotalYesQC2}</Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={styles.tableContainer}>
-          <Text style={styles.tableTitle}>Full Total</Text>
-          <View style={styles.table}>
-            <View style={styles.tableHeader}>
-              <Text style={styles.columnHeader}></Text>
-              <Text style={styles.columnHeader}></Text>
-              <Text style={styles.columnHeader}>{fullTotalYes2}</Text>
-            </View>
-          </View>
-        </View>
+       
       </View>
     </ScrollView>
   );
@@ -572,6 +479,20 @@ const styles = StyleSheet.create({
   },
   footerCell: {
     fontWeight: 'bold',
+  },
+  button: {
+    paddingVertical: 14,
+    paddingHorizontal: 32,
+    borderRadius: 30,
+    marginBottom: 10,
+    shadowColor: 'black',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
 });
 
