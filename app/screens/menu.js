@@ -56,10 +56,6 @@ const Menu = ({ navigation }) => {
             <Text style={styles.buttonLabel}>QC</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressSummaryHandler}>
-            <Text style={styles.buttonLabel}>HVAC/ELEC</Text>
-          </TouchableOpacity>
-
           <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressSummaryHandler}>
             <Text style={styles.buttonLabel}>Regions Summary</Text>
           </TouchableOpacity>
