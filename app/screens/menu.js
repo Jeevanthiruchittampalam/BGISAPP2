@@ -40,27 +40,16 @@ const Menu = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../assets/door.jpg')} style={styles.backgroundImage}>
-        <Text style={styles.logo}>BGIS</Text>
+        <Text style={styles.logo}>Telus</Text>
 
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressBCHandler}>
-            <Text style={styles.buttonLabel}>BC</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressCentralHandler}>
-            <Text style={styles.buttonLabel}>Central</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressABHandler}>
-            <Text style={styles.buttonLabel}>AB</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressQCHandler}>
-            <Text style={styles.buttonLabel}>QC</Text>
-          </TouchableOpacity>
+     
 
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressSummaryHandler}>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressSummaryHandler}>
             <Text style={styles.buttonLabel}>Regions Summary</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressEditHandler}>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressEditHandler}>
             <Text style={styles.buttonLabel}>Quick Add</Text>
           </TouchableOpacity>
           
