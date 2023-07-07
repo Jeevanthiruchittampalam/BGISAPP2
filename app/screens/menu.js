@@ -61,7 +61,7 @@ const Menu = ({ navigation }) => {
           </TouchableOpacity>
 
           <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressSummaryHandler}>
-            <Text style={styles.buttonLabel}>Summary</Text>
+            <Text style={styles.buttonLabel}>Regions Summary</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={[styles.button, { backgroundColor: '#71d9e2' }]} onPress={pressEditHandler}>
