@@ -15,31 +15,25 @@ import ImageU from '../screens/Imageuploader'
 import Summary from '../screens/summary'
 
 //BC Imports
-import BCMenu from '../screens/BCPages/BCMenu'
-import BCSpares from '../screens/BCPages/BCCSparesSS'
+
+import BCSpares from '../screens/TELUS/BCPages/BCCSparesSS'
 import BCWS from '../screens/BCPages/BCWS'
 
 // Central Imports
-import CMenu from '../screens/CentralPages/CMenu'
-import CSpares from '../screens/CentralPages/CCSparesSS'
+
+import CSpares from '../screens/TELUS/CentralPages/CCSparesSS'
 import CWS from '../screens/CentralPages/CWS'
 
 // Quebec Imports
-import QMenu from '../screens/QCPages/QMenu'
-import QSpares from '../screens/QCPages/QCSparesSS'
-import QWS from '../screens/QCPages/QWS'
+
+import QSpares from '../screens/TELUS/QCPages/QCSparesSS'
+import QWS from '../screens/TELUS/QCPages/QWS'
 
 // Alberta Imports
-import ABMenu from '../screens/ABPages/ABMenu'
-import ABSpares from '../screens/ABPages/ABCSparesSS'
-import ABWS from '../screens/ABPages/ABWS'
+import ABSpares from '../screens/TELUS/ABPages/ABCSparesSS'
+import ABWS from '../screens/TELUS/ABPages/ABWS'
 
-//Summary
 
-import ELEC from '../screens/Summary/ELEC'
-import HVAC from '../screens/Summary/HVAC'
-import SummaryI from '../screens/Summary/SummaryInfo'
-import SummaryM from '../screens/Summary/SummaryMenu'
 
 //---
 const screens = {
