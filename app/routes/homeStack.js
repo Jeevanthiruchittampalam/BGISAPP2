@@ -10,22 +10,20 @@ import Delete from '../screens/delete'
 import FileIn from '../screens/fileIn'
 import FileOut from '../screens/fileOut'
 import History from '../screens/history'
-import SSF from '../screens/spreadsheet'
-import ImageU from '../screens/Imageuploader'
 import Summary from '../screens/summary'
 
-//BC Imports
 
+//TELUS IMPORTS
+
+//BC Imports
 import BCSpares from '../screens/TELUS/BCPages/BCCSparesSS'
-import BCWS from '../screens/BCPages/BCWS'
+import BCWS from '../screens/TELUS/BCPages/BCWS'
 
 // Central Imports
-
 import CSpares from '../screens/TELUS/CentralPages/CCSparesSS'
-import CWS from '../screens/CentralPages/CWS'
+import CWS from '../screens//TELUS/CentralPages/CWS'
 
 // Quebec Imports
-
 import QSpares from '../screens/TELUS/QCPages/QCSparesSS'
 import QWS from '../screens/TELUS/QCPages/QWS'
 
@@ -131,42 +129,11 @@ const screens = {
     }),
     
   },
-  SSF: {
-    screen: SSF,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-  ImageU: {
-    screen: ImageU,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
+  
  
 
   //------BC
-  BCMenu: {
-    screen: BCMenu,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
+ 
   BCSpares: {
     screen: BCSpares,
     navigationOptions: ({ navigation }) => ({
@@ -193,17 +160,7 @@ const screens = {
 
   //--------
   //------Central
-  CMenu: {
-    screen: CMenu,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
+  
   CSpares: {
     screen: CSpares,
     navigationOptions: ({ navigation }) => ({
@@ -230,17 +187,7 @@ const screens = {
 
   //--------
   //------Alberta
-  ABMenu: {
-    screen: ABMenu,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
+  
   ABSpares: {
     screen: ABSpares,
     navigationOptions: ({ navigation }) => ({
@@ -267,17 +214,7 @@ const screens = {
 
   //--------
   //------Quebec
-  QMenu: {
-    screen: QMenu,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
+ 
   QSpares: {
     screen: QSpares,
     navigationOptions: ({ navigation }) => ({
@@ -300,58 +237,6 @@ const screens = {
     }),
     
   },
-
-  
-
-  //Summary
-  ELEC: {
-    screen: ELEC,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-  HVAC: {
-    screen: HVAC,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-
-  SummaryM: {
-    screen: SummaryM,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-
-  SummaryI: {
-    screen: SummaryI,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-        width: '100%',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
-
-  //--------
 
   //--------
 

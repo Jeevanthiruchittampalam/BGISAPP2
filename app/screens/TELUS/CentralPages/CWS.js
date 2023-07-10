@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';
-import { firebase } from '../../../config';
+import { firebase } from '../../../../config';
 //import './spreadsheet.css'; // Make sure to have the spreadsheet style file
 import { ImageBackground } from 'react-native-web';
 
