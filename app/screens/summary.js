@@ -3,7 +3,20 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-nati
 import { firebase } from '../../config';
 import 'firebase/firestore';
 
-const SummaryPage = () => {
+const SummaryPage = ({ navigation }) => {
+
+  const pressBCHandler = () => {
+    navigation.navigate('BCSpares');
+  };
+  const pressABHandler = () => {
+    navigation.navigate('ABSpares');
+  };
+  const pressQCHandler = () => {
+    navigation.navigate('QSpares');
+  };
+  const pressCentralHandler = () => {
+    navigation.navigate('CSpares');
+  };
 
   const [CSDataAB, setCSDataAB] = useState([]);
   const [CSDataBC, setCSDataBC] = useState([]);
@@ -42,6 +55,10 @@ const SummaryPage = () => {
 
     fetchCSData();
   }, []);
+
+
+
+
 
   const [WSDataAB, setWSDataAB] = useState([]);
   const [WSDataBC, setWSDataBC] = useState([]);
@@ -307,7 +324,7 @@ const SummaryPage = () => {
 
         <View style={styles.tableContainer}>
 
-        <TouchableOpacity style={[styles.button, { backgroundColor: 'orange' }]} >
+        <TouchableOpacity style={[styles.button, { backgroundColor: 'orange' }]} onPress={pressABHandler} >
         <Text style={styles.tableTitle}>Region: AB</Text>
           </TouchableOpacity>
           
@@ -334,7 +351,7 @@ const SummaryPage = () => {
         </View>
 
         <View style={styles.tableContainer}>
-        <TouchableOpacity style={[styles.button, { backgroundColor: '#39FF14' }]} >
+        <TouchableOpacity style={[styles.button, { backgroundColor: '#39FF14' }]}onPress={pressBCHandler}>
               <Text style={styles.tableTitle}>Region: BC</Text>
         </TouchableOpacity>   
           <View style={styles.table}>
@@ -359,7 +376,7 @@ const SummaryPage = () => {
         </View>
 
         <View style={styles.tableContainer}>
-        <TouchableOpacity style={[styles.button, { backgroundColor: '#3399FF' }]} >
+        <TouchableOpacity style={[styles.button, { backgroundColor: '#3399FF' }]}onPress={pressCentralHandler} >
               <Text style={styles.tableTitle}>Region: Central</Text>
         </TouchableOpacity> 
           <View style={styles.table}>
@@ -386,7 +403,7 @@ const SummaryPage = () => {
         </View>
 
         <View style={styles.tableContainer}>
-        <TouchableOpacity style={[styles.button, { backgroundColor: '#8A2BE2' }]} >
+        <TouchableOpacity style={[styles.button, { backgroundColor: '#8A2BE2' }]} onPress={pressQCHandler}>
         <Text style={[styles.tableTitle, { color: "black" }]}>Region: QC</Text>
         </TouchableOpacity> 
           <View style={styles.table}>
