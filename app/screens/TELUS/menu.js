@@ -39,8 +39,8 @@ const Menu = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('../assets/door.jpg')} style={styles.backgroundImage}>
-        <Text style={styles.logo}>Telus</Text>
+      <ImageBackground source={require('../../assets/door.jpg')} style={styles.backgroundImage}>
+        <Text style={styles.logo}>TELUS</Text>
 
         <View style={styles.buttonContainer}>
      

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Keyboard, StyleSheet, ScrollView, ImageBackground, Picker } from 'react-native-web';
-import { firebase } from '../../config';
+import { firebase } from '../../../config';
 
 const CoolPage = () => {
   const [formData, setFormData] = useState({
@@ -135,7 +135,7 @@ const CoolPage = () => {
 
 
   return (
-    <ImageBackground source={require('../assets/test3.jpg')} style={styles.backgroundImage}>
+    <ImageBackground source={require('../../assets/test3.jpg')} style={styles.backgroundImage}>
     <ScrollView style={styles.container}>
       <View style={styles.formContainer}>
       <Picker

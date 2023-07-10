@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, ImageBackground, Picker } from 'react-native-web';
-import { firebase } from '../../config';
+import { firebase } from '../../../config';
 import * as XLSX from 'xlsx';
 import * as DocumentPicker from 'expo-document-picker';
 
@@ -65,7 +65,7 @@ const itemsData = jsonData.slice(1).map((row) => {
 };
 
   return (
-    <ImageBackground source={require('../assets/test3.jpg')} style={styles.backgroundImage}>
+    <ImageBackground source={require('../../assets/test3.jpg')} style={styles.backgroundImage}>
       <View style={styles.container}>
         <Picker
           style={styles.picker}

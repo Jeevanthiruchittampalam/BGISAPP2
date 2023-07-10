@@ -4,16 +4,17 @@ import Welcome from '../screens/WelcomeScreen'
 import About from '../screens/about'
 import Login from '../screens/login'
 import ViewScreen from '../screens/view'
-import Menu from '../screens/menu'
-import Edit from '../screens/quickAdd'
-import Delete from '../screens/delete'
-import FileIn from '../screens/fileIn'
-import FileOut from '../screens/fileOut'
+import Edit from '../screens/TELUS/quickAdd'
+import FileIn from '../screens/TELUS/fileIn'
+import FileOut from '../screens/TELUS/fileOut'
 import History from '../screens/history'
-import Summary from '../screens/summary'
+import Summary from '../screens/TELUS/summary'
+import ClientMenu from '../screens/clientMenu'
 
 
 //TELUS IMPORTS
+
+import TelusMenu from '../screens/TELUS/menu'
 
 //BC Imports
 import BCSpares from '../screens/TELUS/BCPages/BCCSparesSS'
@@ -71,8 +72,8 @@ const screens = {
       headerTitle: () => null,
     }),
   },
-  Menu: {
-    screen: Menu,
+  TelusMenu: {
+    screen: TelusMenu,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',
@@ -89,16 +90,7 @@ const screens = {
       headerTitle: () => null,
     }),
   },
-  Delete: {
-    screen: Delete,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#144E87',
-      },
-      headerTitle: () => null,
-    }),
-    
-  },
+
   FileIn: {
     screen: FileIn,
     navigationOptions: ({ navigation }) => ({
@@ -242,6 +234,17 @@ const screens = {
 
   Summary: {
     screen: Summary,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  ClientMenu: {
+    screen: ClientMenu,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',

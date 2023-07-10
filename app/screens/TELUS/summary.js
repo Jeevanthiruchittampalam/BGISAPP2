@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import { firebase } from '../../config';
+import { firebase } from '../../../config';
 import 'firebase/firestore';
 
 const SummaryPage = ({ navigation }) => {
