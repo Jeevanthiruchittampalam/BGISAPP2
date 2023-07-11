@@ -5,7 +5,7 @@ const ClearPage = () => {
   const clearCollection = async () => {
     try {
       const db = firebase.firestore();
-      const collectionRef = db.collection('ELEC');
+      const collectionRef = db.collection('HVAC');
 
       // Retrieve all documents in the collection
       const querySnapshot = await collectionRef.get();
