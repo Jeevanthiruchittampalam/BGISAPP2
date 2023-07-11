@@ -11,7 +11,7 @@ const Menu = ({ navigation }) => {
         navigation.navigate('SAITMenu');
         break;
       case 'BC Hydro':
-        navigation.navigate('BCMenu');
+        navigation.navigate('BCHydroMenu');
         break;
       case 'AI':
         navigation.navigate('AIMenu');
@@ -39,37 +39,41 @@ const Menu = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('../assets/test3.jpg')} style={styles.backgroundImage}>
-        <Text style={styles.logo}>CLIENTS</Text>
+      <ImageBackground source={require('../assets/test2.jpg')} style={styles.backgroundImage}>
+      <Text style={[styles.logo, { color: '#144E87' }]}>CLIENTS</Text>
+
 
         <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={[styles.button, { backgroundColor: '#71d9e2' }]}
-            onPress={() => handleClientSelection('TELUS')}
+        <TouchableOpacity
+            style={[styles.button, { backgroundColor: '#144E87' }]}
+            onPress={() => handleClientSelection('AI')}
           >
-            <Text style={styles.buttonLabel}>TELUS</Text>
+            <Text style={styles.buttonLabel}>AI</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={[styles.button, { backgroundColor: '#71d9e2' }]}
-            onPress={() => handleClientSelection('SAIT')}
-          >
-            <Text style={styles.buttonLabel}>SAIT</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.button, { backgroundColor: '#71d9e2' }]}
+            style={[styles.button, { backgroundColor: '#144E87' }]}
             onPress={() => handleClientSelection('BC Hydro')}
           >
             <Text style={styles.buttonLabel}>BC Hydro</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={[styles.button, { backgroundColor: '#71d9e2' }]}
-            onPress={() => handleClientSelection('AI')}
+            style={[styles.button, { backgroundColor: '#144E87' }]}
+            onPress={() => handleClientSelection('SAIT')}
           >
-            <Text style={styles.buttonLabel}>AI</Text>
+            <Text style={styles.buttonLabel}>SAIT</Text>
           </TouchableOpacity>
+
+
+          <TouchableOpacity
+            style={[styles.button, { backgroundColor: '#144E87' }]}
+            onPress={() => handleClientSelection('TELUS')}
+          >
+            <Text style={styles.buttonLabel}>TELUS</Text>
+          </TouchableOpacity>
+
+          
         </View>
       </ImageBackground>
     </View>
