@@ -72,13 +72,9 @@ const itemsData = jsonData.slice(1).map((row) => {
           selectedValue={selectedCollection}
           onValueChange={(value) => setSelectedCollection(value)}
         >
-          <Picker.Item label="Alberta Wish List" value="ABWS" />
           <Picker.Item label="Alberta Critical Spares" value="ABSpares" />
-          <Picker.Item label="British Columbia Wish List" value="BCWS" />
           <Picker.Item label="British Columbia Critical Spares" value="BCSpares" />
-          <Picker.Item label="Central Wish List" value="CWS" />
           <Picker.Item label="Central Critical Spares" value="CSpares" />
-          <Picker.Item label="Quebec Wish List" value="QCWS" />
           <Picker.Item label="Quebec Critical Spares" value="QCSpares" />
         </Picker>
 
