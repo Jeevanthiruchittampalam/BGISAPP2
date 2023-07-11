@@ -24,7 +24,16 @@ const Spreadsheet = () => {
     'Region': '',
     'Relationship to Parent Equipment/System': '',
     'Serial Number': '',
-    'Vendor': ''
+    'Vendor': '',
+    'Date Entered': '',
+    'dateRecieved': '',
+    'requiredBy': '',
+    'estimatedArrivalInterval':'',
+    'Delivery Status': '',
+    'Last Maintenance': '',
+    'Upcoming Maintenance Date': '',
+    'Mainenance Status': '',
+    'Wish List': ''
   });
   //const [sortConfig, setSortConfig] = useState({field: '', direction: 'asc'});
 
@@ -63,7 +72,16 @@ const Spreadsheet = () => {
         'Region': '',
         'Relationship to Parent Equipment/System': '',
         'Serial Number': '',
-        'Vendor': ''
+        'Vendor': '',
+        'Date Entered': '',
+        'dateRecieved': '',
+        'requiredBy': '',
+        'estimatedArrivalInterval':'',
+        'Delivery Status': '',
+        'Last Maintenance': '',
+        'Upcoming Maintenance Date': '',
+        'Mainenance Status': '',
+        'Wish List': ''
       });
     } catch (error) {
       console.log('Error adding item:', error);
@@ -148,6 +166,7 @@ const Spreadsheet = () => {
           <Text style={styles.headerText} onPress={() => handleSort('Last Maintenance')}>Last Maintenance </Text>
           <Text style={styles.headerText} onPress={() => handleSort('Upcoming Maintenance Date')}>Upcoming Maintenance Date</Text>
           <Text style={styles.headerText} onPress={() => handleSort('Maintenance Status')}>Maintenance Status</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('Wish List')}>Wish List (Y/N)</Text>
           
         </View>
         {items.map((item, index) => (
@@ -271,6 +290,12 @@ const Spreadsheet = () => {
               style={styles.input}
               value={item['Maintenance Status']}
               onChangeText={(value) => handleChange(value, 'Maintenance Status', index)}
+            />
+
+            <TextInput
+              style={styles.input}
+              value={item['Wish List']}
+              onChangeText={(value) => handleChange(value, 'Wish List', index)}
             />
             
             <TouchableOpacity onPress={() => handleDeleteItem(item.id)}>
@@ -422,6 +447,12 @@ const Spreadsheet = () => {
             value={newItem['Maintenance Status']}
             onChangeText={(value) => setNewItem({ ...newItem, 'Maintenance Status': value })}
             placeholder="Maintenance Status"
+          />
+          <TextInput
+            style={styles.input}
+            value={newItem['Wish List']}
+            onChangeText={(value) => setNewItem({ ...newItem, 'Wish List': value })}
+            placeholder="Wish List (Y/N)"
           />
           <TouchableOpacity onPress={handleAddItem}>
             <Text style={styles.addButton}>Add</Text>
