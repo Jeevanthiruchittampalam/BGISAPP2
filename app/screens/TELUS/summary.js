@@ -57,51 +57,6 @@ const SummaryPage = ({ navigation }) => {
   }, []);
 
 
-
-
-
-  const [WSDataAB, setWSDataAB] = useState([]);
-  const [WSDataBC, setWSDataBC] = useState([]);
-  const [WSDataCentral, setWSDataCentral] = useState([]);
-  const [WSDataQC, setWSDataQC] = useState([]);
-
-  useEffect(() => {
-    const fetchWSData = async () => {
-      const querySnapshotABWS = await firebase.firestore().collection('ABWS')
-        
-        .get();
-
-      const querySnapshotBCWS = await firebase.firestore().collection('BCWS')
-        .where('Region', '==', 'BC')
-        .get();
-
-      const querySnapshotCentralWS = await firebase.firestore().collection('CWS')
-        
-        .get();
-      
-
-      const querySnapshotQCWS = await firebase.firestore().collection('QCWS')
-        
-        .get();
-
-      
-
-      const dataAB2 = querySnapshotABWS.docs.map((doc) => doc.data());
-      setWSDataAB(dataAB2);
-
-      const dataBC2 = querySnapshotBCWS.docs.map((doc) => doc.data());
-      setWSDataBC(dataBC2);
-
-      const dataCentral2 = querySnapshotCentralWS.docs.map((doc) => doc.data());
-      setWSDataCentral(dataCentral2);
-
-      const dataQC2 = querySnapshotQCWS.docs.map((doc) => doc.data());
-      setWSDataQC(dataQC2);
-    };
-
-    fetchWSData();
-  }, []);
-
   const calculateSummaryData = (CSData) => {
     const uniqueBuildings = CSData.reduce((acc, item) => {
       if (!acc.includes(item['Building Name'])) {
@@ -110,26 +65,40 @@ const SummaryPage = ({ navigation }) => {
       return acc;
     }, []);
 
+
+    //total inventory on site
     const column3Data = uniqueBuildings.reduce((acc, building) => {
-        const buildingData = CSData.filter(
-          (item) =>
-            item['Building Name'] === building 
-        );
-        const sum = buildingData.reduce(
-          (total, item) => total + parseFloat(item['Last Cost'] || 0),
-          0
-        );
-        acc[building] = sum;
-        return acc;
+      const buildingData = CSData.filter(
+        (item) =>
+          item['Building Name'] === building && item['Wish List'] === 'N' );
+      const sum = buildingData.reduce(
+        (total, item) => total + parseFloat(item['Last Cost'] || 0) * parseFloat(item['Quantity On Site']  || 0),
+        0
+      );
+      acc[building] = sum;
+      return acc;
       }, {});
       
-
+      //Inventory Cost Requirements
     const column4Data = uniqueBuildings.reduce((acc, building) => {
       const buildingData = CSData.filter(
         (item) =>
-          item['Building Name'] === building );
+          item['Building Name'] === building && (item['Quantity On Site'] === '0' || item['Quantity On Site'] === '') && item['Wish List'] === 'N');
       const sum = buildingData.reduce(
-        (total, item) => total + parseFloat(item['Last Cost'] || 0) * parseFloat(item['Quantity On Site']  || 0),
+        (total, item) => total + parseFloat(item['Last Cost'] || 0),// * parseFloat(item['Quantity On Site']  || 0),
+        0
+      );
+      acc[building] = sum;
+      return acc;
+    }, {});
+
+        //Wish List Cost Requirements
+    const column5Data = uniqueBuildings.reduce((acc, building) => {
+      const buildingData = CSData.filter(
+        (item) =>
+          item['Building Name'] === building && (item['Quantity On Site'] === '0' || item['Quantity On Site'] === '') && item['Wish List'] === 'Y');
+      const sum = buildingData.reduce(
+        (total, item) => total + parseFloat(item['Last Cost'] || 0),// * parseFloat(item['Quantity On Site']  || 0),
         0
       );
       acc[building] = sum;
@@ -152,80 +121,21 @@ const SummaryPage = ({ navigation }) => {
       (total, value) => total + value,
       0
     );
+    
     const abTotalGrand = Object.values(grandTotalData).reduce(
       (total, value) => total + value,
       0
     );
 
-    
-
-    return { uniqueBuildings, column3Data, column4Data, grandTotalData, abTotalNo, abTotalYes, abTotalGrand };
+    return { uniqueBuildings, column3Data, column4Data, column5Data, grandTotalData, abTotalNo, abTotalYes, abTotalGrand};
   };
-
-  const calculateSummaryData2 = (WSData) => {
-    const uniqueBuildings2 = WSData.reduce((acc, item) => {
-      if (!acc.includes(item['Building Name'])) {
-        acc.push(item['Building Name']);
-      }
-      return acc;
-    }, []);
-
-    const column3Data2 = uniqueBuildings2.reduce((acc, building) => {
-      const buildingData2 = WSData.filter(
-        (item) =>
-          item['Building Name'] === building 
-      );
-      const sum = buildingData2.reduce(
-        (total, item) => total + parseFloat(item['Last Cost'] || 0),
-        0
-      );
-      acc[building] = sum;
-      return acc;
-    }, {});
-
-    const column4Data2 = uniqueBuildings2.reduce((acc, building) => {
-      const buildingData2 = WSData.filter(
-        (item) =>
-          item['Building Name'] === building 
-      );
-      const sum = buildingData2.reduce(
-        (total, item) => total + parseFloat(item['Last Cost'] || 0) * parseFloat(item['Quantity On Site']  || 0),
-        0
-      );
-      acc[building] = sum;
-      return acc;
-    }, {});
-
-    const grandTotalData2 = uniqueBuildings2.reduce((acc, building) => {
-      const noSum2 = column3Data2[building] || 0;
-      const yesSum2 = column4Data2[building] || 0;
-      const grandTotal2 = noSum2 + yesSum2;
-      acc[building] = grandTotal2;
-      return acc;
-    }, {});
-
-    const abTotalNo2 = Object.values(column3Data2).reduce(
-      (total, value) => total + value,
-      0
-    );
-    const abTotalYes2 = Object.values(column4Data2).reduce(
-      (total, value) => total + value,
-      0
-    );
-    const abTotalGrand2 = Object.values(grandTotalData2).reduce(
-      (total, value) => total + value,
-      0
-    );
-
-    
-
-    return { uniqueBuildings2, column3Data2, column4Data2, grandTotalData2, abTotalNo2, abTotalYes2, abTotalGrand2 };
-  };
+  
 
   const {
     uniqueBuildings: uniqueBuildingsAB,
     column3Data: column3DataAB,
     column4Data: column4DataAB,
+    column5Data: column5DataAB,
     grandTotalData: grandTotalDataAB,
     abTotalNo: abTotalNoAB,
     abTotalYes: abTotalYesAB,
@@ -236,6 +146,7 @@ const SummaryPage = ({ navigation }) => {
     uniqueBuildings: uniqueBuildingsBC,
     column3Data: column3DataBC,
     column4Data: column4DataBC,
+    column5Data: column5DataBC,
     grandTotalData: grandTotalDataBC,
     abTotalNo: abTotalNoBC,
     abTotalYes: abTotalYesBC,
@@ -246,6 +157,7 @@ const SummaryPage = ({ navigation }) => {
     uniqueBuildings: uniqueBuildingsCentral,
     column3Data: column3DataCentral,
     column4Data: column4DataCentral,
+    column5Data: column5DataCentral,
     grandTotalData: grandTotalDataCentral,
     abTotalNo: abTotalNoCentral,
     abTotalYes: abTotalYesCentral,
@@ -256,6 +168,7 @@ const SummaryPage = ({ navigation }) => {
     uniqueBuildings: uniqueBuildingsQC,
     column3Data: column3DataQC,
     column4Data: column4DataQC,
+    column5Data: column5DataQC,
     grandTotalData: grandTotalDataQC,
     abTotalNo: abTotalNoQC,
     abTotalYes: abTotalYesQC,
@@ -269,53 +182,6 @@ const SummaryPage = ({ navigation }) => {
 
   const fullTotalGrand = fullTotalYes;
 
-  //WS
-  const {
-    uniqueBuildings2: uniqueBuildingsAB2,
-    column3Data2: column3DataAB2,
-    column4Data2: column4DataAB2,
-    grandTotalData2: grandTotalDataAB2,
-    abTotalNo2: abTotalNoAB2,
-    abTotalYes2: abTotalYesAB2,
-    abTotalGrand2: abTotalGrandAB2,
-  } = calculateSummaryData2(WSDataAB);
-
-  const {
-    uniqueBuildings2: uniqueBuildingsBC2,
-    column3Data2: column3DataBC2,
-    column4Data2: column4DataBC2,
-    grandTotalData2: grandTotalDataBC2,
-    abTotalNo2: abTotalNoBC2,
-    abTotalYes2: abTotalYesBC2,
-    abTotalGrand2: abTotalGrandBC2,
-  } = calculateSummaryData2(WSDataBC);
-
-  const {
-    uniqueBuildings2: uniqueBuildingsCentral2,
-    column3Data2: column3DataCentral2,
-    column4Data2: column4DataCentral2,
-    grandTotalData2: grandTotalDataCentral2,
-    abTotalNo2: abTotalNoCentral2,
-    abTotalYes2: abTotalYesCentral2,
-    abTotalGrand2: abTotalGrandCentral2,
-  } = calculateSummaryData2(WSDataCentral);
-
-  const {
-    uniqueBuildings2: uniqueBuildingsQC2,
-    column3Data2: column3DataQC2,
-    column4Data2: column4DataQC2,
-    grandTotalData2: grandTotalDataQC2,
-    abTotalNo2: abTotalNoQC2,
-    abTotalYes2: abTotalYesQC2,
-    abTotalGrand2: abTotalGrandQC2,
-  } = calculateSummaryData2(WSDataQC);
-
-  const fullTotalNo2 = abTotalNoCentral2 + abTotalNoAB2 + abTotalNoBC2 + abTotalNoQC2;
-
-  const fullTotalYes2 = abTotalYesCentral2 + abTotalYesAB2 + abTotalYesBC2 + abTotalYesQC2;
-
-  const fullTotalGrand2 = fullTotalYes2;
-  //-------
 
   return (
     <ScrollView style={styles.container}>
@@ -333,13 +199,17 @@ const SummaryPage = ({ navigation }) => {
             <View style={styles.tableHeader}>
               <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Cost</Text>
+              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
+              <Text style={styles.columnHeader}>Total Cost Requirements</Text>
+              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
             </View>
             {uniqueBuildingsAB.map((building, index) => (
               <View key={building} style={styles.tableRow}>
                 <Text style={styles.cell}>AB</Text>
                 <Text style={styles.cell}>{building}</Text>
+                <Text style={styles.cell}>{column3DataAB[building] || ''}</Text>
                 <Text style={styles.cell}>{column4DataAB[building] || ''}</Text>
+                <Text style={styles.cell}>{column5DataAB[building] || ''}</Text>
               </View>
             ))}
             <View style={styles.tableRow}>

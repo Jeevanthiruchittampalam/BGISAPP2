@@ -5,10 +5,7 @@ import About from '../screens/cleartime'
 import Login from '../screens/login'
 import ViewScreen from '../screens/view'
 import Edit from '../screens/TELUS/quickAdd'
-import FileIn from '../screens/TELUS/fileIn'
-import FileOut from '../screens/TELUS/fileOut'
 import History from '../screens/history'
-import Summary from '../screens/TELUS/summary'
 import ClientMenu from '../screens/clientMenu'
 
 
@@ -26,6 +23,10 @@ import QWS from '../screens/TELUS/QCPages/QWS'
 // Alberta Imports
 import ABSpares from '../screens/TELUS/ABPages/ABCSparesSS'
 import ABWS from '../screens/TELUS/ABPages/ABWS'
+
+import Summary from '../screens/TELUS/summary'
+import FileIn from '../screens/TELUS/fileIn'
+import FileOut from '../screens/TELUS/fileOut'
 //---
 
 
