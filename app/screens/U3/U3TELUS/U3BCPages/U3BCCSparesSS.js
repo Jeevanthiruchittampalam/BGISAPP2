@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';
-import { firebase } from '../../../../config';
+import { firebase } from '../../../../../config';
 //import './spreadsheet.css'; // Make sure to have the spreadsheet style file
 import { ImageBackground } from 'react-native-web';
 
@@ -24,12 +24,21 @@ const Spreadsheet = () => {
     'Region': '',
     'Relationship to Parent Equipment/System': '',
     'Serial Number': '',
-    'Vendor': ''
+    'Vendor': '',
+    'Date Entered': '',
+    'dateRecieved': '',
+    'requiredBy': '',
+    'estimatedArrivalInterval':'',
+    'Delivery Status': '',
+    'Last Maintenance': '',
+    'Upcoming Maintenance Date': '',
+    'Mainenance Status': '',
+    'Wish List': ''
   });
   //const [sortConfig, setSortConfig] = useState({field: '', direction: 'asc'});
 
   useEffect(() => {
-    const unsubscribe = firebase.firestore().collection('ABWS').onSnapshot((snapshot) => {
+    const unsubscribe = firebase.firestore().collection('BCSpares').onSnapshot((snapshot) => {
       const itemsData = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
       setItems(itemsData);
     });
@@ -45,7 +54,7 @@ const Spreadsheet = () => {
 
   const handleAddItem = async () => {
     try {
-      const newItemRef = await firebase.firestore().collection('ABWS').add(newItem);
+      const newItemRef = await firebase.firestore().collection('BCSpares').add(newItem);
       setItems([...items, { id: newItemRef.id, ...newItem }]);
       setNewItem({
         'CLLI Code': '',
@@ -63,7 +72,16 @@ const Spreadsheet = () => {
         'Region': '',
         'Relationship to Parent Equipment/System': '',
         'Serial Number': '',
-        'Vendor': ''
+        'Vendor': '',
+        'Date Entered': '',
+        'dateRecieved': '',
+        'requiredBy': '',
+        'estimatedArrivalInterval':'',
+        'Delivery Status': '',
+        'Last Maintenance': '',
+        'Upcoming Maintenance Date': '',
+        'Mainenance Status': '',
+        'Wish List': ''
       });
     } catch (error) {
       console.log('Error adding item:', error);
@@ -72,7 +90,7 @@ const Spreadsheet = () => {
 
   const handleDeleteItem = async (itemId) => {
     try {
-      await firebase.firestore().collection('ABWS').doc(itemId).delete();
+      await firebase.firestore().collection('BCSpares').doc(itemId).delete();
       setItems(items.filter((item) => item.id !== itemId));
     } catch (error) {
       console.log('Error deleting item:', error);
@@ -84,7 +102,7 @@ const Spreadsheet = () => {
       const batch = firebase.firestore().batch();
   
       items.forEach((item) => {
-        const itemRef = firebase.firestore().collection('ABWS').doc(item.id);
+        const itemRef = firebase.firestore().collection('BCSpares').doc(item.id);
         batch.set(itemRef, item); // Use 'set' instead of 'update' to save the entire item object
       });
   
@@ -103,10 +121,24 @@ const Spreadsheet = () => {
     });
     setItems(sortedItems);
   };
+
+  const PressDelete = async () => {
+    try {
+      const collectionRef = firebase.firestore().collection('BCSpares');
+      const snapshot = await collectionRef.get();
   
+      snapshot.forEach((doc) => {
+        doc.ref.delete();
+      });
+  
+      console.log('Deletion successful!');
+    } catch (error) {
+      console.error('Error deleting data:', error);
+    }
+  };
 
   return (
-    //<ImageBackground source={require('../assets/darkmountains.jpg')} style={styles.backgroundImage}>
+    
     <ScrollView horizontal>
       <View style={styles.container}>
         <View style={styles.headerRow}>
@@ -126,6 +158,15 @@ const Spreadsheet = () => {
           <Text style={styles.headerText} onPress={() => handleSort('Relationship to Parent Equipment/System')}>Relationship to Parent Equipment/System</Text>
           <Text style={styles.headerText} onPress={() => handleSort('Serial Number')}>Serial Number</Text>
           <Text style={styles.headerText} onPress={() => handleSort('Vendor')}>Vendor</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('Date Entered')}>Date Entered</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('dateRecieved')}>Date Recieved</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('requiredBy')}>Required By</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('estimatedArrivalInterval')}>Estimated Arrival Interval</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('Delivery Status')}>Delivery Status</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('Last Maintenance')}>Last Maintenance </Text>
+          <Text style={styles.headerText} onPress={() => handleSort('Upcoming Maintenance Date')}>Upcoming Maintenance Date</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('Maintenance Status')}>Maintenance Status</Text>
+          <Text style={styles.headerText} onPress={() => handleSort('Wish List')}>Wish List (Y/N)</Text>
           
         </View>
         {items.map((item, index) => (
@@ -210,119 +251,60 @@ const Spreadsheet = () => {
               value={item['Vendor']}
               onChangeText={(value) => handleChange(value, 'Vendor', index)}
             />
+            <TextInput
+              style={styles.input}
+              value={item['Date Entered']}
+              onChangeText={(value) => handleChange(value, 'Date Entered', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['dateReceived']}
+              onChangeText={(value) => handleChange(value, 'dateRecieved', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['requiredBy']}
+              onChangeText={(value) => handleChange(value, 'requiredBy', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['estimatedArrivalInterval']}
+              onChangeText={(value) => handleChange(value, 'estimatedArrivalInterval', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['Delivery Status']}
+              onChangeText={(value) => handleChange(value, 'Delivery Status', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['Last Maintenace']}
+              onChangeText={(value) => handleChange(value, 'Last Maintenance', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['Upcoming Maintenance Date']}
+              onChangeText={(value) => handleChange(value, 'Upcoming Maintenance Date', index)}
+            />
+            <TextInput
+              style={styles.input}
+              value={item['Maintenance Status']}
+              onChangeText={(value) => handleChange(value, 'Maintenance Status', index)}
+            />
+
+            <TextInput
+              style={styles.input}
+              value={item['Wish List']}
+              onChangeText={(value) => handleChange(value, 'Wish List', index)}
+            />
             
-            <TouchableOpacity onPress={() => handleDeleteItem(item.id)}>
-              <Text style={styles.deleteButton}>Delete</Text>
-            </TouchableOpacity>
           </View>
         ))}
-        <View style={styles.addRow}>
-          <TextInput
-            style={styles.input}
-            value={newItem['CLLI Code']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'CLLI Code': value })}
-            placeholder="CLLI Code"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Building Category']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Building Category': value })}
-            placeholder="Building Category"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Building Name']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Building Name': value })}
-            placeholder="Building Name"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Building Type']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Building Type': value })}
-            placeholder="Building Type"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Manufacturer']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Manufacturer': value })}
-            placeholder="Manufacturer"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Model']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Model': value })}
-            placeholder="Model"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Notes']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Notes': value })}
-            placeholder="Notes"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Parent Equipment/System']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Parent Equipment/System': value })}
-            placeholder="Parent Equipment/System"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Part Description']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Part Description': value })}
-            placeholder="Part Description"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Part Location']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Part Location': value })}
-            placeholder="Part Location"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Last Cost']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Last Cost': value })}
-            placeholder="Last Cost"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Quantity On Site']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Quantity On Site': value })}
-            placeholder="Quantity On Site"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Region']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Region': value })}
-            placeholder="Region"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Relationship to Parent Equipment/System']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Relationship to Parent Equipment/System': value })}
-            placeholder="Relationship to Parent Equipment/System"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Serial Number']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Serial Number': value })}
-            placeholder="Serial Number"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Vendor']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Vendor': value })}
-            placeholder="Vendor"
-          />
-          <TouchableOpacity onPress={handleAddItem}>
-            <Text style={styles.addButton}>Add</Text>
-          </TouchableOpacity>
-        </View>
-        <TouchableOpacity onPress={handleConfirm}>
-          <Text style={styles.confirmButton}>Confirm</Text>
-        </TouchableOpacity>
+
+
       </View>
     </ScrollView>
-    //</ImageBackground>
+    
   );
   
 };
@@ -334,27 +316,33 @@ const styles = {
   },
   headerRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    //justifyContent: 'space-between',
     backgroundColor: '#eee',
     padding: 10,
   },
   headerText: {
     fontWeight: 'bold',
-    flex: 1,
+    //flex: 1,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    padding: 5,
+    marginRight: 10,
+    width:100,
   },
   dataRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    //justifyContent: 'space-between',
     padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
   },
   input: {
-    flex: 1,
+    
     borderWidth: 1,
     borderColor: '#ccc',
     padding: 5,
     marginRight: 10,
+    width:100,
   },
   deleteButton: {
     color: 'red',

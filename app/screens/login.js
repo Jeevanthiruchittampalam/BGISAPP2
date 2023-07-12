@@ -30,7 +30,7 @@ const LoginScreen = ({ navigation }) => {
         } else if (fieldA === '2') {
           navigation.navigate('ClientMenu');
         } else if (fieldA === '3') {
-          navigation.navigate('Summary');
+          navigation.navigate('U3ClientMenu');
         } else {
           setErrorMessage('Error, invalid field "a" value.');
         }

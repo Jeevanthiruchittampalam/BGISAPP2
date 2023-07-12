@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import { firebase } from '../../../config';
+import { firebase } from '../../../../config';
 import 'firebase/firestore';
 
 const SummaryPage = ({ navigation }) => {
 
   const pressBCHandler = () => {
-    navigation.navigate('BCSpares');
+    navigation.navigate('U3BCSpares');
   };
   const pressABHandler = () => {
-    navigation.navigate('ABSpares');
+    navigation.navigate('U3ABSpares');
   };
   const pressQCHandler = () => {
-    navigation.navigate('QSpares');
+    navigation.navigate('U3QSpares');
   };
   const pressCentralHandler = () => {
-    navigation.navigate('CSpares');
+    navigation.navigate('U3CSpares');
   };
 
   const [CSDataAB, setCSDataAB] = useState([]);

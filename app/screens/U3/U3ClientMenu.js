@@ -5,7 +5,7 @@ const Menu = ({ navigation }) => {
   const handleClientSelection = (client) => {
     switch (client) {
       case 'TELUS':
-        navigation.navigate('TelusMenu');
+        navigation.navigate('U3TelusSummary');
         break;
       case 'SAIT':
         navigation.navigate('SAITMenu');
@@ -39,7 +39,7 @@ const Menu = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('../assets/test2.jpg')} style={styles.backgroundImage}>
+      <ImageBackground source={require('../../assets/test2.jpg')} style={styles.backgroundImage}>
       <Text style={[styles.logo, { color: '#144E87' }]}>CLIENTS</Text>
 
 
@@ -48,21 +48,21 @@ const Menu = ({ navigation }) => {
             style={[styles.button, { backgroundColor: '#144E87' }]}
             onPress={() => handleClientSelection('AI')}
           >
-            <Text style={styles.buttonLabel}>AI</Text>
+            <Text style={styles.buttonLabel}>AI Summary</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={[styles.button, { backgroundColor: '#144E87' }]}
             onPress={() => handleClientSelection('BC Hydro')}
           >
-            <Text style={styles.buttonLabel}>BC Hydro</Text>
+            <Text style={styles.buttonLabel}>BC Hydro Summary</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={[styles.button, { backgroundColor: '#144E87' }]}
             onPress={() => handleClientSelection('SAIT')}
           >
-            <Text style={styles.buttonLabel}>SAIT</Text>
+            <Text style={styles.buttonLabel}>SAIT Summary</Text>
           </TouchableOpacity>
 
 
@@ -70,7 +70,7 @@ const Menu = ({ navigation }) => {
             style={[styles.button, { backgroundColor: '#144E87' }]}
             onPress={() => handleClientSelection('TELUS')}
           >
-            <Text style={styles.buttonLabel}>TELUS</Text>
+            <Text style={styles.buttonLabel}>TELUS Summary</Text>
           </TouchableOpacity>
 
           

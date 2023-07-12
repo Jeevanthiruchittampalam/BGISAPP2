@@ -41,9 +41,16 @@ import SAITMenu from '../screens/SAIT/SAITMenu'
 
 
 
+
 //U3 IMPORTS
-
-
+import U3ClientMenu from '../screens/U3/U3ClientMenu'
+//U3 Telus
+import U3TelusSummary from '../screens/U3/U3TELUS/U3TelusS'
+import U3BCSpares from '../screens/U3/U3TELUS/U3BCPages/U3BCCSparesSS'
+import U3CSpares from '../screens/U3/U3TELUS/U3ABPages/U3ABCSparesSS'
+import U3QSpares from '../screens/U3/U3TELUS/U3CentralPages/U3CCSparesSS'
+import U3ABSpares from '../screens/U3/U3TELUS/U3QCPages/U3QCSparesSS'
+//---
 
 const screens = {
   Welcome: {
@@ -312,6 +319,80 @@ const screens = {
     }),
     
   },
+
+
+
+
+  //U3 Stuff
+
+  U3ClientMenu: {
+    screen: U3ClientMenu,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+  U3TelusSummary: {
+    screen: U3TelusSummary,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3BCSpares: {
+    screen: U3BCSpares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3CSpares: {
+    screen: U3CSpares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3ABSpares: {
+    screen: U3ABSpares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3QSpares: {
+    screen: U3QSpares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
 };
 
 
