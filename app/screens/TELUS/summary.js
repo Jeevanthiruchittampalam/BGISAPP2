@@ -226,15 +226,19 @@ const SummaryPage = ({ navigation }) => {
         </TouchableOpacity>   
           <View style={styles.table}>
             <View style={styles.tableHeader}>
-              <Text style={styles.columnHeader}>Region</Text>
+            <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Cost</Text>
+              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
+              <Text style={styles.columnHeader}>Total Cost Requirements</Text>
+              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
             </View>
             {uniqueBuildingsBC.map((building, index) => (
               <View key={building} style={styles.tableRow}>
                 <Text style={styles.cell}>BC</Text>
                 <Text style={styles.cell}>{building}</Text>
+                <Text style={styles.cell}>{column3DataBC[building] || ''}</Text>
                 <Text style={styles.cell}>{column4DataBC[building] || ''}</Text>
+                <Text style={styles.cell}>{column5DataBC[building] || ''}</Text>
               </View>
             ))}
             <View style={styles.tableRow}>
@@ -253,13 +257,17 @@ const SummaryPage = ({ navigation }) => {
             <View style={styles.tableHeader}>
               <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Cost</Text>
+              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
+              <Text style={styles.columnHeader}>Total Cost Requirements</Text>
+              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
             </View>
             {uniqueBuildingsCentral.map((building, index) => (
               <View key={building} style={styles.tableRow}>
                 <Text style={styles.cell}>Central</Text>
                 <Text style={styles.cell}>{building}</Text>
+                <Text style={styles.cell}>{column3DataCentral[building] || ''}</Text>
                 <Text style={styles.cell}>{column4DataCentral[building] || ''}</Text>
+                <Text style={styles.cell}>{column5DataCentral[building] || ''}</Text>
               </View>
             ))}
             <View style={styles.tableRow}>
@@ -278,15 +286,19 @@ const SummaryPage = ({ navigation }) => {
         </TouchableOpacity> 
           <View style={styles.table}>
             <View style={styles.tableHeader}>
-              <Text style={styles.columnHeader}>Region</Text>
+            <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Cost</Text>
+              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
+              <Text style={styles.columnHeader}>Total Cost Requirements</Text>
+              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
             </View>
             {uniqueBuildingsQC.map((building, index) => (
               <View key={building} style={styles.tableRow}>
                 <Text style={styles.cell}>Quebec</Text>
                 <Text style={styles.cell}>{building}</Text>
+                <Text style={styles.cell}>{column3DataQC[building] || ''}</Text>
                 <Text style={styles.cell}>{column4DataQC[building] || ''}</Text>
+                <Text style={styles.cell}>{column5DataQC[building] || ''}</Text>
               </View>
             ))}
             <View style={styles.tableRow}>
