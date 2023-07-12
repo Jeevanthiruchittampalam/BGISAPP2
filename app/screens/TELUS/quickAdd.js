@@ -21,8 +21,9 @@ const CoolPage = () => {
     'Serial Number': '',
     'Vendor': '',
     'Date Entered': '',
-    'dateReceived': 'Not Yet Recieved', // Add new field with default value "N" 
-    'collection': 'ABWS' // Default collection value
+    'dateReceived': '', // Add new field with default value "N" 
+    'Wish List': '', // Add new field with default value "N" 
+    'collection': '' // Default collection value
   });
 
   const addItem = () => {
@@ -57,7 +58,8 @@ const CoolPage = () => {
             'Serial Number': '',
             'Vendor': '',
             'Date Entered': '',
-            'dateReceived': 'Not Yet Recieved', // Reset the field to default value "N"
+            'Wish List': '',
+            'dateReceived': '', // Reset the field to default value "N"
             'collection': collection // Preserve the selected collection
           });
           Keyboard.dismiss();
@@ -122,6 +124,7 @@ const CoolPage = () => {
       'Serial Number': '',
       'Vendor': '',
       'Date Entered': '',
+      'Wish List': '',
       'dateReceived': 'Not Yet Recieved', // Reset the field to default value "N"
     }));
   };
@@ -143,13 +146,10 @@ const CoolPage = () => {
             selectedValue={formData.collection}
             onValueChange={(value) => handleCollectionChange(value)}
           >
-            <Picker.Item label="Alberta Wish List" value="ABWS" />
+            <Picker.Item label="SELECT" value="" />
             <Picker.Item label="Alberta Critical Spares" value="ABSpares" />
-            <Picker.Item label="British Columbia Wish List" value="BCWS" />
             <Picker.Item label="British Columbia Critical Spares" value="BCSpares" />
-            <Picker.Item label="Central Wish List" value="CWS" />
             <Picker.Item label="Central Critical Spares" value="CSpares" />
-            <Picker.Item label="Quebec Wish List" value="QCWS" />
             <Picker.Item label="Quebec Critical Spares" value="QCSpares" />
           </Picker>
         <TextInput
@@ -306,9 +306,19 @@ const CoolPage = () => {
           autoCapitalize="none"
         />
 
+<TextInput
+          style={styles.input}
+          placeholder="Wish List (Enter Y Or N)"
+          placeholderTextColor="#aaaaaa"
+          onChangeText={(value) => handleInputChange('Wish List', value)}
+          value={formData['Wish List']}
+          underlineColor="transparent"
+          autoCapitalize="none"
+        />
+
         <TextInput
             style={styles.input}
-            placeholder="Date Received"
+            placeholder="Date Received, Format: YYYY-MM-DD"
             placeholderTextColor="#aaaaaa"
             onChangeText={(value) => handleInputChange('dateReceived', value)}
             value={formData['dateReceived']}

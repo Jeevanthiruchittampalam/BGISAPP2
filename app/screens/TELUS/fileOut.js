@@ -61,6 +61,7 @@ const FileOut = () => {
           selectedValue={selectedCollection}
           onValueChange={(value) => setSelectedCollection(value)}
         >
+          <Picker.Item label="SELECT" value="" />
           <Picker.Item label="Alberta Critical Spares" value="ABSpares" />
           <Picker.Item label="British Columbia Critical Spares" value="BCSpares" />
           <Picker.Item label="Central Critical Spares" value="CSpares" />
