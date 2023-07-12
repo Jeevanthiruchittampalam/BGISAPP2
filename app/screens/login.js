@@ -18,18 +18,29 @@ const LoginScreen = ({ navigation }) => {
         .where('email', '==', email)
         .where('password', '==', password)
         .get();
-
+  
       if (snapshot.empty) {
         setErrorMessage('Error, invalid sign-in, please try again.');
       } else {
-        // User is authorized, navigate to the "View" page
-        pressLoginHandler();
+        const userData = snapshot.docs[0].data();
+        const fieldA = userData.a;
+        
+        if (fieldA === '1') {
+          navigation.navigate('ClientMenu');
+        } else if (fieldA === '2') {
+          navigation.navigate('ClientMenu');
+        } else if (fieldA === '3') {
+          navigation.navigate('Summary');
+        } else {
+          setErrorMessage('Error, invalid field "a" value.');
+        }
       }
     } catch (error) {
       console.error('Login error:', error);
       setErrorMessage('An error occurred. Please try again later.');
     }
   };
+  
 
   return (
     <ImageBackground source={require('../assets/test2.jpg')} style={styles.backgroundImage}>
