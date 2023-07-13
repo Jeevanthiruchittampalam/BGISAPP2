@@ -49,7 +49,7 @@ const Menu = ({ navigation }) => {
             onPress={() => handleClientSelection('AI')}
           >
             <Text style={styles.buttonLabel}>AI Summary</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> 
 
           <TouchableOpacity
             style={[styles.button, { backgroundColor: '#144E87' }]}
