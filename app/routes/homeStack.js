@@ -53,6 +53,13 @@ import BCHydroQuickAdd from '../screens/BCHydro/BCHydroQuickAdd'
 //SAIT Imports
 import SAITMenu from '../screens/SAIT/SAITMenu'
 import SAITSummary from '../screens/SAIT/SAITSummary'
+import SAIT1Spares from '../screens/SAIT/SAIT1/SAIT1Spares'
+import SAIT2Spares from '../screens/SAIT/SAIT2/SAIT2Spares'
+import SAIT3Spares from '../screens/SAIT/SAIT3/SAIT3Spares'
+import SAIT4Spares from '../screens/SAIT/SAIT4/SAIT4Spares'
+import SAITFileIn from '../screens/SAIT/SAITFileIn'
+import SAITFileOut from '../screens/SAIT/SAITFileOut'
+import SAITQuickAdd from '../screens/SAIT/SAITQuickAdd'
 
 
 
@@ -490,6 +497,85 @@ const screens = {
   },
   SAITSummary: {
     screen:SAITSummary,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+  SAIT1Spares: {
+    screen:SAIT1Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  SAIT2Spares: {
+    screen:SAIT2Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  SAIT3Spares: {
+    screen:SAIT3Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  SAIT4Spares: {
+    screen:SAIT4Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+  SAITFileOut: {
+    screen:SAITFileOut,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  SAITFileIn: {
+    screen:SAITFileIn,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  SAITQuickAdd: {
+    screen:SAITQuickAdd,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',
