@@ -11,7 +11,7 @@ const Menu = ({ navigation }) => {
         navigation.navigate('U3SAITSummary');
         break;
       case 'BC Hydro':
-        navigation.navigate('BCHydroMenu');
+        navigation.navigate('U3BCHydroSummary');
         break;
       case 'AI':
         navigation.navigate('AIMenu');

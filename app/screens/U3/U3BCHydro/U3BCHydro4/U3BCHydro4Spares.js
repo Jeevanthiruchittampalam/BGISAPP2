@@ -38,7 +38,7 @@ const Spreadsheet = () => {
   //const [sortConfig, setSortConfig] = useState({field: '', direction: 'asc'});
 
   useEffect(() => {
-    const unsubscribe = firebase.firestore().collection('SAIT4Spares').onSnapshot((snapshot) => {
+    const unsubscribe = firebase.firestore().collection('BCHydro4Spares').onSnapshot((snapshot) => {
       const itemsData = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
       setItems(itemsData);
     });
@@ -54,7 +54,7 @@ const Spreadsheet = () => {
 
   const handleAddItem = async () => {
     try {
-      const newItemRef = await firebase.firestore().collection('SAIT4Spares').add(newItem);
+      const newItemRef = await firebase.firestore().collection('BCHydro4Spares').add(newItem);
       setItems([...items, { id: newItemRef.id, ...newItem }]);
       setNewItem({
         'CLLI Code': '',
@@ -90,7 +90,7 @@ const Spreadsheet = () => {
 
   const handleDeleteItem = async (itemId) => {
     try {
-      await firebase.firestore().collection('SAIT4Spares').doc(itemId).delete();
+      await firebase.firestore().collection('BCHydro4Spares').doc(itemId).delete();
       setItems(items.filter((item) => item.id !== itemId));
     } catch (error) {
       console.log('Error deleting item:', error);
@@ -102,7 +102,7 @@ const Spreadsheet = () => {
       const batch = firebase.firestore().batch();
   
       items.forEach((item) => {
-        const itemRef = firebase.firestore().collection('SAIT4Spares').doc(item.id);
+        const itemRef = firebase.firestore().collection('BCHydro4Spares').doc(item.id);
         batch.set(itemRef, item); // Use 'set' instead of 'update' to save the entire item object
       });
   
@@ -124,7 +124,7 @@ const Spreadsheet = () => {
 
   const PressDelete = async () => {
     try {
-      const collectionRef = firebase.firestore().collection('SAIT4Spares');
+      const collectionRef = firebase.firestore().collection('BCHydro4Spares');
       const snapshot = await collectionRef.get();
   
       snapshot.forEach((doc) => {

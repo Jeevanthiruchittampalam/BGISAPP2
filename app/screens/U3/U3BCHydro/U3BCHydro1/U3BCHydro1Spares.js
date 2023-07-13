@@ -38,7 +38,7 @@ const Spreadsheet = () => {
   //const [sortConfig, setSortConfig] = useState({field: '', direction: 'asc'});
 
   useEffect(() => {
-    const unsubscribe = firebase.firestore().collection('SAIT4Spares').onSnapshot((snapshot) => {
+    const unsubscribe = firebase.firestore().collection('BCHydro1Spares').onSnapshot((snapshot) => {
       const itemsData = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
       setItems(itemsData);
     });
@@ -54,7 +54,7 @@ const Spreadsheet = () => {
 
   const handleAddItem = async () => {
     try {
-      const newItemRef = await firebase.firestore().collection('SAIT4Spares').add(newItem);
+      const newItemRef = await firebase.firestore().collection('BCHydro1Spares').add(newItem);
       setItems([...items, { id: newItemRef.id, ...newItem }]);
       setNewItem({
         'CLLI Code': '',
@@ -90,7 +90,7 @@ const Spreadsheet = () => {
 
   const handleDeleteItem = async (itemId) => {
     try {
-      await firebase.firestore().collection('SAIT4Spares').doc(itemId).delete();
+      await firebase.firestore().collection('BCHydro1Spares').doc(itemId).delete();
       setItems(items.filter((item) => item.id !== itemId));
     } catch (error) {
       console.log('Error deleting item:', error);
@@ -102,7 +102,7 @@ const Spreadsheet = () => {
       const batch = firebase.firestore().batch();
   
       items.forEach((item) => {
-        const itemRef = firebase.firestore().collection('SAIT4Spares').doc(item.id);
+        const itemRef = firebase.firestore().collection('BCHydro1Spares').doc(item.id);
         batch.set(itemRef, item); // Use 'set' instead of 'update' to save the entire item object
       });
   
@@ -124,7 +124,7 @@ const Spreadsheet = () => {
 
   const PressDelete = async () => {
     try {
-      const collectionRef = firebase.firestore().collection('SAIT4Spares');
+      const collectionRef = firebase.firestore().collection('BCHydro1Spares');
       const snapshot = await collectionRef.get();
   
       snapshot.forEach((doc) => {
@@ -298,164 +298,9 @@ const Spreadsheet = () => {
               onChangeText={(value) => handleChange(value, 'Wish List', index)}
             />
             
-            <TouchableOpacity onPress={() => handleDeleteItem(item.id)}>
-              <Text style={styles.deleteButton}>Delete</Text>
-            </TouchableOpacity>
           </View>
         ))}
-        <View style={styles.addRow}>
-          <TextInput
-            style={styles.input}
-            value={newItem['CLLI Code']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'CLLI Code': value })}
-            placeholder="CLLI Code"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Building Category']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Building Category': value })}
-            placeholder="Building Category"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Building Name']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Building Name': value })}
-            placeholder="Building Name"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Building Type']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Building Type': value })}
-            placeholder="Building Type"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Manufacturer']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Manufacturer': value })}
-            placeholder="Manufacturer"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Model']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Model': value })}
-            placeholder="Model"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Notes']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Notes': value })}
-            placeholder="Notes"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Parent Equipment/System']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Parent Equipment/System': value })}
-            placeholder="Parent Equipment/System"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Part Description']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Part Description': value })}
-            placeholder="Part Description"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Part Location']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Part Location': value })}
-            placeholder="Part Location"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Last Cost']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Last Cost': value })}
-            placeholder="Last Cost"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Quantity On Site']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Quantity On Site': value })}
-            placeholder="Quantity On Site"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Region']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Region': value })}
-            placeholder="Region"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Relationship to Parent Equipment/System']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Relationship to Parent Equipment/System': value })}
-            placeholder="Relationship to Parent Equipment/System"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Serial Number']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Serial Number': value })}
-            placeholder="Serial Number"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Vendor']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Vendor': value })}
-            placeholder="Vendor"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Date Entered']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Date Entered': value })}
-            placeholder="Date Entered YYYY-MM-DD"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['dateRecieved']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'dateRecieved': value })}
-            placeholder="Date Recieved YYYY-MM-DD"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['requiredBy']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'requiredBy': value })}
-            placeholder="Required By"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['estimatedArrivalInterval']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'estimatedArrivalInterval': value })}
-            placeholder="Estimated Arrival Interval"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Delivery Status']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Delivery Status': value })}
-            placeholder="Delivery Status"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Last Maintenance']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Last Maintenance': value })}
-            placeholder="Last Maintenance"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Upcoming Maintenance Date']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Upcoming Maintenance Date': value })}
-            placeholder="Upcoming Maintenance Date"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Maintenance Status']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Maintenance Status': value })}
-            placeholder="Maintenance Status"
-          />
-          <TextInput
-            style={styles.input}
-            value={newItem['Wish List']}
-            onChangeText={(value) => setNewItem({ ...newItem, 'Wish List': value })}
-            placeholder="Wish List (Y/N)"
-          />
 
-        </View>
 
       </View>
     </ScrollView>

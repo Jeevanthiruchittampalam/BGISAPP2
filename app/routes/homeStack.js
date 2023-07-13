@@ -80,6 +80,12 @@ import U3SAIT2Spares from '../screens/U3/U3SAIT/U3SAIT2/U3SAIT2Spares'
 import U3SAIT3Spares from '../screens/U3/U3SAIT/U3SAIT3/U3SAIT3Spares'
 import U3SAIT4Spares from '../screens/U3/U3SAIT/U3SAIT4/U3SAIT4Spares'
 
+import U3BCHydroSummary from '../screens/U3/U3BCHydro/U3BCHydroS'
+import U3BCHydro1Spares from '../screens/U3/U3BCHydro/U3BCHydro1/U3BCHydro1Spares'
+import U3BCHydro2Spares from '../screens/U3/U3BCHydro/U3BCHydro2/U3BCHydro2Spares'
+import U3BCHydro3Spares from '../screens/U3/U3BCHydro/U3BCHydro3/U3BCHydro3Spares'
+import U3BCHydro4Spares from '../screens/U3/U3BCHydro/U3BCHydro4/U3BCHydro4Spares'
+
 //---
 
 const screens = {
@@ -741,6 +747,62 @@ const screens = {
   },
   U3SAIT4Spares: {
     screen: U3SAIT4Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+  U3BCHydroSummary: {
+    screen: U3BCHydroSummary,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3BCHydro1Spares: {
+    screen: U3BCHydro1Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3BCHydro2Spares: {
+    screen: U3BCHydro2Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3BCHydro3Spares: {
+    screen: U3BCHydro3Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3BCHydro4Spares: {
+    screen: U3BCHydro4Spares,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',
