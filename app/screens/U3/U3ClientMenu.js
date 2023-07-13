@@ -14,7 +14,7 @@ const Menu = ({ navigation }) => {
         navigation.navigate('U3BCHydroSummary');
         break;
       case 'AI':
-        navigation.navigate('AIMenu');
+        navigation.navigate('U3AISummary');
         break;
       default:
         break;
@@ -40,7 +40,7 @@ const Menu = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../../assets/test2.jpg')} style={styles.backgroundImage}>
-      <Text style={[styles.logo, { color: '#144E87' }]}>U3 CLIENTS</Text>
+      <Text style={[styles.logo, { color: '#144E87' }]}>(View Mode) CLIENTS</Text>
 
 
         <View style={styles.buttonContainer}>

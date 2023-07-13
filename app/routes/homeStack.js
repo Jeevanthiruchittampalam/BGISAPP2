@@ -86,6 +86,12 @@ import U3BCHydro2Spares from '../screens/U3/U3BCHydro/U3BCHydro2/U3BCHydro2Spare
 import U3BCHydro3Spares from '../screens/U3/U3BCHydro/U3BCHydro3/U3BCHydro3Spares'
 import U3BCHydro4Spares from '../screens/U3/U3BCHydro/U3BCHydro4/U3BCHydro4Spares'
 
+import U3AISummary from '../screens/U3/U3AI/U3AIS'
+import U3AI1Spares from '../screens/U3/U3AI/U3AI1/U3AI1Spares'
+import U3AI2Spares from '../screens/U3/U3AI/U3AI2/U3AI2Spares'
+import U3AI3Spares from '../screens/U3/U3AI/U3AI3/U3AI3Spares'
+import U3AI4Spares from '../screens/U3/U3AI/U3AI4/U3AI4Spares'
+
 //---
 
 const screens = {
@@ -803,6 +809,62 @@ const screens = {
   },
   U3BCHydro4Spares: {
     screen: U3BCHydro4Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+  U3AISummary: {
+    screen: U3AISummary,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3AI1Spares: {
+    screen: U3AI1Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3AI2Spares: {
+    screen: U3AI2Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3AI3Spares: {
+    screen: U3AI3Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3AI4Spares: {
+    screen: U3AI4Spares,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',
