@@ -32,6 +32,13 @@ import FileOut from '../screens/TELUS/fileOut'
 //AI Imports
 import AIMenu from '../screens/AI/AIMenu'
 import AISummary from '../screens/AI/AISummary'
+import AI1Spares from '../screens/AI/AI1/AI1Spares'
+import AI2Spares from '../screens/AI/AI2/AI2Spares'
+import AI3Spares from '../screens/AI/AI3/AI3Spares'
+import AI4Spares from '../screens/AI/AI4/AI4Spares'
+import AIFileIn from '../screens/AI/AIFileIn'
+import AIFileOut from '../screens/AI/AIFileOut'
+import AIQuickAdd from '../screens/AI/AIQuickAdd'
 
 //BCHYDRO Imports
 import BCHydroMenu from '../screens/BCHydro/BCHydroMenu'
@@ -266,6 +273,83 @@ const screens = {
   },
   AISummary: {
     screen:AISummary,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  AI1Spares: {
+    screen:AI1Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  AI2Spares: {
+    screen:AI2Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  AI3Spares: {
+    screen:AI3Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  AI4Spares: {
+    screen:AI4Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  AIFileOut: {
+    screen:AIFileOut,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  AIFileIn: {
+    screen:AIFileIn,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  AIQuickAdd: {
+    screen:AIQuickAdd,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',

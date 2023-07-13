@@ -5,7 +5,7 @@ const Menu = ({ navigation }) => {
 
 
   const pressEditHandler = () => {
-    navigation.navigate('Edit');
+    navigation.navigate('AIQuickAdd');
   };
 
   const pressBCHandler = () => {
@@ -24,11 +24,11 @@ const Menu = ({ navigation }) => {
   };
 
   const pressImportHandler = () => {
-    navigation.navigate('FileIn');
+    navigation.navigate('AIFileIn');
   };
 
   const pressExportHandler = () => {
-    navigation.navigate('FileOut');
+    navigation.navigate('AIFileOut');
   };
   const pressHistoryHandler = () => {
     navigation.navigate('History');
@@ -49,7 +49,7 @@ const Menu = ({ navigation }) => {
             <Text style={styles.buttonLabel}>Regions Summary</Text>
           </TouchableOpacity>
 
-          {/* <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressEditHandler}>
+          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressEditHandler}>
             <Text style={styles.buttonLabel}>Quick Add</Text>
           </TouchableOpacity>
           
@@ -58,7 +58,7 @@ const Menu = ({ navigation }) => {
           </TouchableOpacity>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressExportHandler}>
             <Text style={styles.buttonLabel}>Export</Text>
-          </TouchableOpacity> */}
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     </View>

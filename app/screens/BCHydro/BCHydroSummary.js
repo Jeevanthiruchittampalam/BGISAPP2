@@ -302,7 +302,7 @@ const SummaryPage = ({ navigation }) => {
               </View>
             ))}
             <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>Quebec Total</Text>
+              <Text style={[styles.cell, styles.footerCell]}>BCHydro3 Total</Text>
               <Text style={styles.cell}></Text>
 
               <Text style={[styles.cell, styles.footerCell]}>{abTotalYesBCHydro3}</Text>
