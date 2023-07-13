@@ -31,10 +31,10 @@ import FileOut from '../screens/TELUS/fileOut'
 
 //AI Imports
 import AIMenu from '../screens/AI/AIMenu'
+import AISummary from '../screens/AI/AISummary'
 
 //BCHYDRO Imports
 import BCHydroMenu from '../screens/BCHydro/BCHydroMenu'
-
 //SAIT Imports
 import SAITMenu from '../screens/SAIT/SAITMenu'
 
@@ -253,6 +253,17 @@ const screens = {
 
   AIMenu: {
     screen:AIMenu,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  AISummary: {
+    screen:AISummary,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',

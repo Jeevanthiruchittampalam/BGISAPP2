@@ -34,7 +34,7 @@ const Menu = ({ navigation }) => {
     navigation.navigate('History');
   };
   const pressSummaryHandler = () => {
-    navigation.navigate('Summary');
+    navigation.navigate('AISummary');
   };
 
   return (
@@ -49,7 +49,7 @@ const Menu = ({ navigation }) => {
             <Text style={styles.buttonLabel}>Regions Summary</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressEditHandler}>
+          {/* <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressEditHandler}>
             <Text style={styles.buttonLabel}>Quick Add</Text>
           </TouchableOpacity>
           
@@ -58,7 +58,7 @@ const Menu = ({ navigation }) => {
           </TouchableOpacity>
           <TouchableOpacity style={[styles.button, { backgroundColor: '#144E87' }]} onPress={pressExportHandler}>
             <Text style={styles.buttonLabel}>Export</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </ImageBackground>
     </View>
