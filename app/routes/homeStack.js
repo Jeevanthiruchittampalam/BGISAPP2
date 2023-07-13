@@ -43,6 +43,13 @@ import AIQuickAdd from '../screens/AI/AIQuickAdd'
 //BCHYDRO Imports
 import BCHydroMenu from '../screens/BCHydro/BCHydroMenu'
 import BCHydroSummary from '../screens/BCHydro/BCHydroSummary'
+import BCHydro1Spares from '../screens/BCHydro/BCHydro1/BCHydro1Spares'
+import BCHydro2Spares from '../screens/BCHydro/BCHydro2/BCHydro2Spares'
+import BCHydro3Spares from '../screens/BCHydro/BCHydro3/BCHydro3Spares'
+import BCHydro4Spares from '../screens/BCHydro/BCHydro4/BCHydro4Spares'
+import BCHydroFileIn from '../screens/BCHydro/BCHydroFileIn'
+import BCHydroFileOut from '../screens/BCHydro/BCHydroFileOut'
+import BCHydroQuickAdd from '../screens/BCHydro/BCHydroQuickAdd'
 //SAIT Imports
 import SAITMenu from '../screens/SAIT/SAITMenu'
 import SAITSummary from '../screens/SAIT/SAITSummary'
@@ -377,6 +384,85 @@ const screens = {
   },
   BCHydroSummary: {
     screen:BCHydroSummary,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+  BCHydro1Spares: {
+    screen:BCHydro1Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  BCHydro2Spares: {
+    screen:BCHydro2Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  BCHydro3Spares: {
+    screen:BCHydro3Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  BCHydro4Spares: {
+    screen:BCHydro4Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+  BCHydroFileOut: {
+    screen:BCHydroFileOut,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  BCHydroFileIn: {
+    screen:BCHydroFileIn,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  BCHydroQuickAdd: {
+    screen:BCHydroQuickAdd,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',
