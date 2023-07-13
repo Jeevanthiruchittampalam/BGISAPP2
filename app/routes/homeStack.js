@@ -70,9 +70,16 @@ import U3ClientMenu from '../screens/U3/U3ClientMenu'
 //U3 Telus
 import U3TelusSummary from '../screens/U3/U3TELUS/U3TelusS'
 import U3BCSpares from '../screens/U3/U3TELUS/U3BCPages/U3BCCSparesSS'
-import U3CSpares from '../screens/U3/U3TELUS/U3ABPages/U3ABCSparesSS'
-import U3QSpares from '../screens/U3/U3TELUS/U3CentralPages/U3CCSparesSS'
-import U3ABSpares from '../screens/U3/U3TELUS/U3QCPages/U3QCSparesSS'
+import U3CSpares from '../screens/U3/U3TELUS/U3CentralPages/U3CCSparesSS'
+import U3QSpares from '../screens/U3/U3TELUS/U3QCPages/U3QCSparesSS'
+import U3ABSpares from '../screens/U3/U3TELUS/U3ABPages/U3ABCSparesSS'
+//U3 SAIT
+import U3SAITSummary from '../screens/U3/U3SAIT/U3SAITS'
+import U3SAIT1Spares from '../screens/U3/U3SAIT/U3SAIT1/U3SAIT1Spares'
+import U3SAIT2Spares from '../screens/U3/U3SAIT/U3SAIT2/U3SAIT2Spares'
+import U3SAIT3Spares from '../screens/U3/U3SAIT/U3SAIT3/U3SAIT3Spares'
+import U3SAIT4Spares from '../screens/U3/U3SAIT/U3SAIT4/U3SAIT4Spares'
+
 //---
 
 const screens = {
@@ -674,6 +681,66 @@ const screens = {
   },
   U3QSpares: {
     screen: U3QSpares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+
+
+
+
+
+  U3SAITSummary: {
+    screen: U3SAITSummary,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3SAIT1Spares: {
+    screen: U3SAIT1Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3SAIT2Spares: {
+    screen: U3SAIT2Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3SAIT3Spares: {
+    screen: U3SAIT3Spares,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  U3SAIT4Spares: {
+    screen: U3SAIT4Spares,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',
