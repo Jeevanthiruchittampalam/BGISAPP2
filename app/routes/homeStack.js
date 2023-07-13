@@ -35,8 +35,10 @@ import AISummary from '../screens/AI/AISummary'
 
 //BCHYDRO Imports
 import BCHydroMenu from '../screens/BCHydro/BCHydroMenu'
+import BCHydroSummary from '../screens/BCHydro/BCHydroSummary'
 //SAIT Imports
 import SAITMenu from '../screens/SAIT/SAITMenu'
+import SAITSummary from '../screens/SAIT/SAITSummary'
 
 
 
@@ -289,6 +291,17 @@ const screens = {
     }),
     
   },
+  BCHydroSummary: {
+    screen:BCHydroSummary,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
 
   //END OF BCHydro---------------
 
@@ -296,6 +309,17 @@ const screens = {
 
   SAITMenu: {
     screen:SAITMenu,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#144E87',
+        width: '100%',
+      },
+      headerTitle: () => null,
+    }),
+    
+  },
+  SAITSummary: {
+    screen:SAITSummary,
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
         backgroundColor: '#144E87',
