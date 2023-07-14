@@ -200,7 +200,7 @@ const SummaryPage = ({ navigation }) => {
               <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
               <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Total Cost Requirements</Text>
+              <Text style={styles.columnHeader}>Cost Requirements</Text>
               <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
             </View>
             {uniqueBuildingsAB.map((building, index) => (
@@ -229,7 +229,7 @@ const SummaryPage = ({ navigation }) => {
             <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
               <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Total Cost Requirements</Text>
+              <Text style={styles.columnHeader}>Cost Requirements</Text>
               <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
             </View>
             {uniqueBuildingsBC.map((building, index) => (
@@ -258,7 +258,7 @@ const SummaryPage = ({ navigation }) => {
               <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
               <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Total Cost Requirements</Text>
+              <Text style={styles.columnHeader}>Cost Requirements</Text>
               <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
             </View>
             {uniqueBuildingsCentral.map((building, index) => (
@@ -289,7 +289,7 @@ const SummaryPage = ({ navigation }) => {
             <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
               <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Total Cost Requirements</Text>
+              <Text style={styles.columnHeader}>Cost Requirements</Text>
               <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
             </View>
             {uniqueBuildingsQC.map((building, index) => (

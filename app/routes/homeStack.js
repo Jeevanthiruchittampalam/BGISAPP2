@@ -1,7 +1,7 @@
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 import Welcome from '../screens/WelcomeScreen'
-import About from '../screens/cleartime'
+import About from '../screens/about'
 import Login from '../screens/login'
 import ViewScreen from '../screens/view'
 import Edit from '../screens/TELUS/quickAdd'

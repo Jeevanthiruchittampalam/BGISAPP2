@@ -7,7 +7,7 @@ const WelcomeScreen = ({ navigation }) => {
   };
 
   const pressRegisterHandler = () => {
-    navigation.navigate('U3ClientMenu');
+    navigation.navigate('About');
   };
 
 

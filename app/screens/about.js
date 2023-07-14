@@ -17,18 +17,8 @@ const About = () => {
           <Text style={styles.label}>Features</Text>
           <ScrollView style={styles.bulletPointsContainer}>
             <View style={styles.bubble}>
-              <Text style={styles.bulletPoint}>Intuitive and Visually Appealing: Complete</Text>
-              <Text style={styles.bulletPoint}>User Login: Functional, Need to Import Users</Text>
-              <Text style={styles.bulletPoint}>Database Storage of Data: Complete</Text>
-              <Text style={styles.bulletPoint}>Editable Data: Complete</Text>
-              <Text style={styles.bulletPoint}>History of Edits: Partially Complete</Text>
-              <Text style={styles.bulletPoint}>Notifications of shortages: Partial Solution</Text>
-              <Text style={styles.bulletPoint}>Information Sorting: Complete</Text>
-              <Text style={styles.bulletPoint}>Refreshable: Complete</Text>
-              <Text style={styles.bulletPoint}>Leave Time, Criticality, Ordered vs Recieved, Images: Complete</Text>
-              <Text style={styles.bulletPoint}>Maintenance Schedule: Complete</Text>
-              <Text style={styles.bulletPoint}>Bonuses: Web scraping, auto procurement: To Be Implemented In Future</Text>
-              <Text style={styles.bulletPoint}>Version: 3.1.2</Text>
+              <Text style={styles.bulletPoint}>Version: 3.4.0</Text>
+              <Text style={styles.bulletPoint}>Last Update: July 14, 2023</Text>
             </View>
           </ScrollView>
         </View>
