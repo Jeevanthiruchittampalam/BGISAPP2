@@ -69,7 +69,7 @@ const itemsData = jsonData.slice(1).map((row) => {
       <View style={styles.container}>
         <Picker
           style={styles.picker}
-          selectedValue={selectedCollection}
+          selectedValue={selectedCollection} 
           onValueChange={(value) => setSelectedCollection(value)}
         >
           <Picker.Item label="SELECT" value="" />
