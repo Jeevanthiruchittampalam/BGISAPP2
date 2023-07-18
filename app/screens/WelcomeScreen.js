@@ -3,11 +3,11 @@ import { ImageBackground, StyleSheet, View, Text, Image, TouchableOpacity } from
 
 const WelcomeScreen = ({ navigation }) => {
   const pressLoginHandler = () => {
-    navigation.navigate('U3ClientMenu');
+    navigation.navigate('Login');
   };
 
   const pressRegisterHandler = () => {
-    navigation.navigate('ClientMenu');
+    navigation.navigate('About');
   };
 
 
