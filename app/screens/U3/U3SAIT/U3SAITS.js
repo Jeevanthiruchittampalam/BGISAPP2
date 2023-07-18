@@ -190,57 +190,25 @@ const SummaryPage = ({ navigation }) => {
       <View>
         <Text style={styles.heading}>Critical Spares</Text>
 
-        <View style={styles.tableContainer}>
-
-        <TouchableOpacity style={[styles.button, { backgroundColor: 'orange' }]} onPress={pressSAIT2Handler} >
-        <Text style={styles.tableTitle}>Region: SAIT2</Text>
-          </TouchableOpacity>
-          
-
-          <View style={styles.table}>
-            <View style={styles.tableHeader}>
-              <Text style={styles.columnHeader}>Region</Text>
-              <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
-            </View>
-            {uniqueBuildingsSAIT2.map((building, index) => (
-              <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>SAIT2</Text>
-                <Text style={styles.cell}>{building}</Text>
-                <Text style={styles.cell}>{column3DataSAIT2[building] || ''}</Text>
-                <Text style={styles.cell}>{column4DataSAIT2[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataSAIT2[building] || ''}</Text>
-              </View>
-            ))}
-            <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>SAIT2 Total</Text>
-              <Text style={styles.cell}></Text>
-              <Text style={[styles.cell, styles.footerCell]}>{abTotalYesSAIT2}</Text>
-            </View>
-          </View>
-        </View>
 
         <View style={styles.tableContainer}>
         <TouchableOpacity style={[styles.button, { backgroundColor: '#39FF14' }]}onPress={pressSAIT1Handler}>
-              <Text style={styles.tableTitle}>Region: SAIT1</Text>
+              <Text style={styles.tableTitle}>Region: AB</Text>
         </TouchableOpacity>   
           <View style={styles.table}>
             <View style={styles.tableHeader}>
             <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
+              <Text style={styles.columnHeader}>Inventory On Hand($)</Text>
+              <Text style={styles.columnHeader}>Spares Requirements ($)</Text>
             </View>
             {uniqueBuildingsSAIT1.map((building, index) => (
               <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>SAIT1</Text>
+                <Text style={styles.cell}>AB</Text>
                 <Text style={styles.cell}>{building}</Text>
                 <Text style={styles.cell}>{column3DataSAIT1[building] || ''}</Text>
                 <Text style={styles.cell}>{column4DataSAIT1[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataSAIT1[building] || ''}</Text>
+                
               </View>
             ))}
             <View style={styles.tableRow}>
@@ -251,67 +219,7 @@ const SummaryPage = ({ navigation }) => {
           </View>
         </View>
 
-        <View style={styles.tableContainer}>
-        <TouchableOpacity style={[styles.button, { backgroundColor: '#3399FF' }]}onPress={pressSAIT4Handler} >
-              <Text style={styles.tableTitle}>Region: SAIT4</Text>
-        </TouchableOpacity> 
-          <View style={styles.table}>
-            <View style={styles.tableHeader}>
-              <Text style={styles.columnHeader}>Region</Text>
-              <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
-            </View>
-            {uniqueBuildingsSAIT4.map((building, index) => (
-              <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>SAIT4</Text>
-                <Text style={styles.cell}>{building}</Text>
-                <Text style={styles.cell}>{column3DataSAIT4[building] || ''}</Text>
-                <Text style={styles.cell}>{column4DataSAIT4[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataSAIT4[building] || ''}</Text>
-              </View>
-            ))}
-            <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>SAIT4 Total</Text>
-              <Text style={styles.cell}></Text>
 
-              <Text style={[styles.cell, styles.footerCell]}>{abTotalYesSAIT4}</Text>
-
-            </View>
-          </View>
-        </View>
-
-        <View style={styles.tableContainer}>
-        <TouchableOpacity style={[styles.button, { backgroundColor: '#8A2BE2' }]} onPress={pressSAIT3Handler}>
-        <Text style={[styles.tableTitle, { color: "black" }]}>Region: SAIT3</Text>
-        </TouchableOpacity> 
-          <View style={styles.table}>
-            <View style={styles.tableHeader}>
-            <Text style={styles.columnHeader}>Region</Text>
-              <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
-            </View>
-            {uniqueBuildingsSAIT3.map((building, index) => (
-              <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>SAIT3</Text>
-                <Text style={styles.cell}>{building}</Text>
-                <Text style={styles.cell}>{column3DataSAIT3[building] || ''}</Text>
-                <Text style={styles.cell}>{column4DataSAIT3[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataSAIT3[building] || ''}</Text>
-              </View>
-            ))}
-            <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>SAIT3 Total</Text>
-              <Text style={styles.cell}></Text>
-
-              <Text style={[styles.cell, styles.footerCell]}>{abTotalYesSAIT3}</Text>
-
-            </View>
-          </View>
-        </View>
 
 
         <View style={styles.tableContainer}>

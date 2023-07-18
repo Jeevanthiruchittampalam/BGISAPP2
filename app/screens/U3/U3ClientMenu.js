@@ -40,7 +40,7 @@ const Menu = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../../assets/test2.jpg')} style={styles.backgroundImage}>
-      <Text style={[styles.logo, { color: '#144E87' }]}>(View Mode) CLIENTS</Text>
+      <Text style={[styles.logo, { color: '#144E87' }]}>(VIEW MODE) Clients</Text>
 
 
         <View style={styles.buttonContainer}>
