@@ -188,132 +188,40 @@ const SummaryPage = ({ navigation }) => {
       <View>
         <Text style={styles.heading}>Critical Spares</Text>
 
-        <View style={styles.tableContainer}>
 
-        <TouchableOpacity style={[styles.button, { backgroundColor: 'orange' }]} onPress={pressAI2Handler} >
-        <Text style={styles.tableTitle}>Region: AI2</Text>
-          </TouchableOpacity>
-          
-
-          <View style={styles.table}>
-            <View style={styles.tableHeader}>
-              <Text style={styles.columnHeader}>Region</Text>
-              <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
-            </View>
-            {uniqueBuildingsAI2.map((building, index) => (
-              <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>AI2</Text>
-                <Text style={styles.cell}>{building}</Text>
-                <Text style={styles.cell}>{column3DataAI2[building] || ''}</Text>
-                <Text style={styles.cell}>{column4DataAI2[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataAI2[building] || ''}</Text>
-              </View>
-            ))}
-            <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>AI2 Total</Text>
-              <Text style={styles.cell}></Text>
-              <Text style={[styles.cell, styles.footerCell]}>{abTotalYesAI2}</Text>
-            </View>
-          </View>
-        </View>
 
         <View style={styles.tableContainer}>
         <TouchableOpacity style={[styles.button, { backgroundColor: '#39FF14' }]}onPress={pressAI1Handler}>
-              <Text style={styles.tableTitle}>Region: AI1</Text>
+              <Text style={styles.tableTitle}>Region: AB</Text>
         </TouchableOpacity>   
           <View style={styles.table}>
             <View style={styles.tableHeader}>
             <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
+              <Text style={styles.columnHeader}>Inventory On Hand($)</Text>
+              <Text style={styles.columnHeader}>Spares Requirements ($)</Text>
             </View>
             {uniqueBuildingsAI1.map((building, index) => (
               <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>AI1</Text>
+                <Text style={styles.cell}>AB</Text>
                 <Text style={styles.cell}>{building}</Text>
                 <Text style={styles.cell}>{column3DataAI1[building] || ''}</Text>
                 <Text style={styles.cell}>{column4DataAI1[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataAI1[building] || ''}</Text>
               </View>
             ))}
             <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>AI1 Total</Text>
+              <Text style={[styles.cell, styles.footerCell]}>AB Total</Text>
               <Text style={styles.cell}></Text>
               <Text style={[styles.cell, styles.footerCell]}>{abTotalYesAI1}</Text>
             </View>
           </View>
         </View>
 
-        <View style={styles.tableContainer}>
-        <TouchableOpacity style={[styles.button, { backgroundColor: '#3399FF' }]}onPress={pressAI4Handler} >
-              <Text style={styles.tableTitle}>Region: AI4</Text>
-        </TouchableOpacity> 
-          <View style={styles.table}>
-            <View style={styles.tableHeader}>
-              <Text style={styles.columnHeader}>Region</Text>
-              <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
-            </View>
-            {uniqueBuildingsAI4.map((building, index) => (
-              <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>AI4</Text>
-                <Text style={styles.cell}>{building}</Text>
-                <Text style={styles.cell}>{column3DataAI4[building] || ''}</Text>
-                <Text style={styles.cell}>{column4DataAI4[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataAI4[building] || ''}</Text>
-              </View>
-            ))}
-            <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>AI4 Total</Text>
-              <Text style={styles.cell}></Text>
 
-              <Text style={[styles.cell, styles.footerCell]}>{abTotalYesAI4}</Text>
-
-            </View>
-          </View>
-        </View>
-
-        <View style={styles.tableContainer}>
-        <TouchableOpacity style={[styles.button, { backgroundColor: '#8A2BE2' }]} onPress={pressAI3Handler}>
-        <Text style={[styles.tableTitle, { color: "black" }]}>Region: AI3</Text>
-        </TouchableOpacity> 
-          <View style={styles.table}>
-            <View style={styles.tableHeader}>
-            <Text style={styles.columnHeader}>Region</Text>
-              <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
-            </View>
-            {uniqueBuildingsAI3.map((building, index) => (
-              <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>AI3</Text>
-                <Text style={styles.cell}>{building}</Text>
-                <Text style={styles.cell}>{column3DataAI3[building] || ''}</Text>
-                <Text style={styles.cell}>{column4DataAI3[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataAI3[building] || ''}</Text>
-              </View>
-            ))}
-            <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>AI3 Total</Text>
-              <Text style={styles.cell}></Text>
-
-              <Text style={[styles.cell, styles.footerCell]}>{abTotalYesAI3}</Text>
-
-            </View>
-          </View>
-        </View>
 
 
         <View style={styles.tableContainer}>
-          <Text style={styles.tableTitle}>Full Total</Text>
+          <Text style={styles.tableTitle}>AI Total</Text>
           <View style={styles.table}>
             <View style={styles.tableHeader}>
               <Text style={styles.columnHeader}></Text>

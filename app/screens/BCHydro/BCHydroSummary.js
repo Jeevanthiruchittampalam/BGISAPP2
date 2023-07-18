@@ -188,128 +188,36 @@ const SummaryPage = ({ navigation }) => {
       <View>
         <Text style={styles.heading}>Critical Spares</Text>
 
-        <View style={styles.tableContainer}>
-
-        <TouchableOpacity style={[styles.button, { backgroundColor: 'orange' }]} onPress={pressBCHydro2Handler} >
-        <Text style={styles.tableTitle}>Region: BCHydro2</Text>
-          </TouchableOpacity>
-          
-
-          <View style={styles.table}>
-            <View style={styles.tableHeader}>
-              <Text style={styles.columnHeader}>Region</Text>
-              <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
-            </View>
-            {uniqueBuildingsBCHydro2.map((building, index) => (
-              <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>BCHydro2</Text>
-                <Text style={styles.cell}>{building}</Text>
-                <Text style={styles.cell}>{column3DataBCHydro2[building] || ''}</Text>
-                <Text style={styles.cell}>{column4DataBCHydro2[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataBCHydro2[building] || ''}</Text>
-              </View>
-            ))}
-            <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>BCHydro2 Total</Text>
-              <Text style={styles.cell}></Text>
-              <Text style={[styles.cell, styles.footerCell]}>{abTotalYesBCHydro2}</Text>
-            </View>
-          </View>
-        </View>
 
         <View style={styles.tableContainer}>
         <TouchableOpacity style={[styles.button, { backgroundColor: '#39FF14' }]}onPress={pressBCHydro1Handler}>
-              <Text style={styles.tableTitle}>Region: BCHydro1</Text>
+              <Text style={styles.tableTitle}>Region: BC</Text>
         </TouchableOpacity>   
           <View style={styles.table}>
             <View style={styles.tableHeader}>
             <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
+              <Text style={styles.columnHeader}>Inventory On Hand($)</Text>
+              <Text style={styles.columnHeader}>Spares Requirements ($)</Text>
             </View>
             {uniqueBuildingsBCHydro1.map((building, index) => (
               <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>BCHydro1</Text>
+                <Text style={styles.cell}>BC</Text>
                 <Text style={styles.cell}>{building}</Text>
                 <Text style={styles.cell}>{column3DataBCHydro1[building] || ''}</Text>
                 <Text style={styles.cell}>{column4DataBCHydro1[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataBCHydro1[building] || ''}</Text>
+                
               </View>
             ))}
             <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>BCHydro1 Total</Text>
+              <Text style={[styles.cell, styles.footerCell]}>BCHydro Total</Text>
               <Text style={styles.cell}></Text>
               <Text style={[styles.cell, styles.footerCell]}>{abTotalYesBCHydro1}</Text>
             </View>
           </View>
         </View>
 
-        <View style={styles.tableContainer}>
-        <TouchableOpacity style={[styles.button, { backgroundColor: '#3399FF' }]}onPress={pressBCHydro4Handler} >
-              <Text style={styles.tableTitle}>Region: BCHydro4</Text>
-        </TouchableOpacity> 
-          <View style={styles.table}>
-            <View style={styles.tableHeader}>
-              <Text style={styles.columnHeader}>Region</Text>
-              <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
-            </View>
-            {uniqueBuildingsBCHydro4.map((building, index) => (
-              <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>BCHydro4</Text>
-                <Text style={styles.cell}>{building}</Text>
-                <Text style={styles.cell}>{column3DataBCHydro4[building] || ''}</Text>
-                <Text style={styles.cell}>{column4DataBCHydro4[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataBCHydro4[building] || ''}</Text>
-              </View>
-            ))}
-            <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>BCHydro4 Total</Text>
-              <Text style={styles.cell}></Text>
 
-              <Text style={[styles.cell, styles.footerCell]}>{abTotalYesBCHydro4}</Text>
-
-            </View>
-          </View>
-        </View>
-
-        <View style={styles.tableContainer}>
-        <TouchableOpacity style={[styles.button, { backgroundColor: '#8A2BE2' }]} onPress={pressBCHydro3Handler}>
-        <Text style={[styles.tableTitle, { color: "black" }]}>Region: BCHydro3</Text>
-        </TouchableOpacity> 
-          <View style={styles.table}>
-            <View style={styles.tableHeader}>
-            <Text style={styles.columnHeader}>Region</Text>
-              <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
-            </View>
-            {uniqueBuildingsBCHydro3.map((building, index) => (
-              <View key={building} style={styles.tableRow}>
-                <Text style={styles.cell}>BCHydro3</Text>
-                <Text style={styles.cell}>{building}</Text>
-                <Text style={styles.cell}>{column3DataBCHydro3[building] || ''}</Text>
-                <Text style={styles.cell}>{column4DataBCHydro3[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataBCHydro3[building] || ''}</Text>
-              </View>
-            ))}
-            <View style={styles.tableRow}>
-              <Text style={[styles.cell, styles.footerCell]}>BCHydro3 Total</Text>
-              <Text style={styles.cell}></Text>
-
-              <Text style={[styles.cell, styles.footerCell]}>{abTotalYesBCHydro3}</Text>
-
-            </View>
-          </View>
-        </View>
 
 
         <View style={styles.tableContainer}>

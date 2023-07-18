@@ -148,9 +148,9 @@ const CoolPage = () => {
           >
             <Picker.Item label="SELECT" value="" />
             <Picker.Item label="BCHydro 1" value="BCHydro1Spares" />
-            <Picker.Item label="BCHydro 2" value="BCHydro2Spares" />
+            {/* <Picker.Item label="BCHydro 2" value="BCHydro2Spares" />
             <Picker.Item label="BCHydro 3" value="BCHydro3Spares" />
-            <Picker.Item label="BCHydro 4" value="BCHydro4Spares" />
+            <Picker.Item label="BCHydro 4" value="BCHydro4Spares" /> */}
           </Picker>
         <TextInput
           style={styles.input}
