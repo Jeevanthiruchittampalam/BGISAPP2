@@ -147,10 +147,10 @@ const CoolPage = () => {
             onValueChange={(value) => handleCollectionChange(value)}
           >
             <Picker.Item label="SELECT" value="" />
-            <Picker.Item label="SAIT 1" value="SAIT1Spares" />
-            <Picker.Item label="SAIT 2" value="SAIT2Spares" />
+            <Picker.Item label="SAIT" value="SAIT1Spares" />
+            {/* <Picker.Item label="SAIT 2" value="SAIT2Spares" />
             <Picker.Item label="SAIT 3" value="SAIT3Spares" />
-            <Picker.Item label="SAIT 4" value="SAIT4Spares" />
+            <Picker.Item label="SAIT 4" value="SAIT4Spares" /> */}
           </Picker>
         <TextInput
           style={styles.input}

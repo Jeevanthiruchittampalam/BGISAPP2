@@ -199,9 +199,9 @@ const SummaryPage = ({ navigation }) => {
             <View style={styles.tableHeader}>
               <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
+              
+              <Text style={styles.columnHeader}>Inventory On Hand($)</Text>
+              <Text style={styles.columnHeader}>Spares Requirements ($)</Text>
             </View>
             {uniqueBuildingsAB.map((building, index) => (
               <View key={building} style={styles.tableRow}>
@@ -209,7 +209,7 @@ const SummaryPage = ({ navigation }) => {
                 <Text style={styles.cell}>{building}</Text>
                 <Text style={styles.cell}>{column3DataAB[building] || ''}</Text>
                 <Text style={styles.cell}>{column4DataAB[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataAB[building] || ''}</Text>
+                {/* <Text style={styles.cell}>{column5DataAB[building] || ''}</Text> */}
               </View>
             ))}
             <View style={styles.tableRow}>
@@ -228,9 +228,9 @@ const SummaryPage = ({ navigation }) => {
             <View style={styles.tableHeader}>
             <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
+              <Text style={styles.columnHeader}>Inventory On Hand($)</Text>
+              <Text style={styles.columnHeader}>Spares Requirements ($)</Text>
+              
             </View>
             {uniqueBuildingsBC.map((building, index) => (
               <View key={building} style={styles.tableRow}>
@@ -238,7 +238,7 @@ const SummaryPage = ({ navigation }) => {
                 <Text style={styles.cell}>{building}</Text>
                 <Text style={styles.cell}>{column3DataBC[building] || ''}</Text>
                 <Text style={styles.cell}>{column4DataBC[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataBC[building] || ''}</Text>
+                
               </View>
             ))}
             <View style={styles.tableRow}>
@@ -257,9 +257,9 @@ const SummaryPage = ({ navigation }) => {
             <View style={styles.tableHeader}>
               <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
+              <Text style={styles.columnHeader}>Inventory On Hand($)</Text>
+              <Text style={styles.columnHeader}>Spares Requirements ($)</Text>
+              
             </View>
             {uniqueBuildingsCentral.map((building, index) => (
               <View key={building} style={styles.tableRow}>
@@ -267,7 +267,7 @@ const SummaryPage = ({ navigation }) => {
                 <Text style={styles.cell}>{building}</Text>
                 <Text style={styles.cell}>{column3DataCentral[building] || ''}</Text>
                 <Text style={styles.cell}>{column4DataCentral[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataCentral[building] || ''}</Text>
+                
               </View>
             ))}
             <View style={styles.tableRow}>
@@ -288,9 +288,8 @@ const SummaryPage = ({ navigation }) => {
             <View style={styles.tableHeader}>
             <Text style={styles.columnHeader}>Region</Text>
               <Text style={styles.columnHeader}>Building</Text>
-              <Text style={styles.columnHeader}>Total Inventory On Hand</Text>
-              <Text style={styles.columnHeader}>Cost Requirements</Text>
-              <Text style={styles.columnHeader}>Wish List Cost Requirements</Text>
+              <Text style={styles.columnHeader}>Inventory On Hand($)</Text>
+              <Text style={styles.columnHeader}>Spares Requirements ($)</Text>
             </View>
             {uniqueBuildingsQC.map((building, index) => (
               <View key={building} style={styles.tableRow}>
@@ -298,7 +297,7 @@ const SummaryPage = ({ navigation }) => {
                 <Text style={styles.cell}>{building}</Text>
                 <Text style={styles.cell}>{column3DataQC[building] || ''}</Text>
                 <Text style={styles.cell}>{column4DataQC[building] || ''}</Text>
-                <Text style={styles.cell}>{column5DataQC[building] || ''}</Text>
+                
               </View>
             ))}
             <View style={styles.tableRow}>
