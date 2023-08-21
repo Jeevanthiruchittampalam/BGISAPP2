@@ -17,8 +17,8 @@ const About = () => {
           <Text style={styles.label}>Features</Text>
           <ScrollView style={styles.bulletPointsContainer}>
             <View style={styles.bubble}>
-              <Text style={styles.bulletPoint}>Version: 3.4.4</Text>
-              <Text style={styles.bulletPoint}>Last Update: July 18, 2023</Text>
+              <Text style={styles.bulletPoint}>Version: 3.4.5</Text>
+              <Text style={styles.bulletPoint}>Last Update: August 21, 2023</Text>
             </View>
           </ScrollView>
         </View>
