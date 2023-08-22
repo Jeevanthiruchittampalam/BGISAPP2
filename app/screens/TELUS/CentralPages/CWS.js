@@ -5,6 +5,7 @@ import { firebase } from '../../../../config';
 import { ImageBackground } from 'react-native-web';
 
 const Spreadsheet = () => {
+  
   //items from the collection
   const [items, setItems] = useState([]);
   //new items to be added

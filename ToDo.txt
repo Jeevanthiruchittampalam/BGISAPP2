@@ -1,1 +1,16 @@
-Summary Page for all
+Get Proper Domain Name (To Be Picked By BGIS)
+Insert Users Into 'Users' Collection in Firestore Database
+Fix cleartime.js so that it can be accessed by Admin? Or find a cleaner way for mass data removal. 
+
+App is functional! Take it for a spin. Please contact for a trial login within View Mode Rules. 
+
+
+View Mode: Can simply view data
+Manager Mode: Import/Export, edit data
+Admin Mode: Mass Removal of Data, Web Page Alterations 
+
+
+Push does not neccesarily equal publish
+
+
+
